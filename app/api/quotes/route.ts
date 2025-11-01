@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getDb } from "../../../lib/db";
+
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
 
 type Req = {
   nombre?: string;
@@ -42,6 +44,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
+    // Dynamically import db to avoid build-time MongoDB connection
+    const { getDb } = await import("../../../lib/db");
     const db = await getDb();
     const coll = db.collection("quotes");
     const doc = { ...body, createdAt: new Date(), ip };
