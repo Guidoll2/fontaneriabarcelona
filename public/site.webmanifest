@@ -1,0 +1,21 @@
+{
+  "name": "Fontanería Low Cost",
+  "short_name": "Fontanería LC",
+  "description": "Servicios de fontanería, piscinas y electricidad 24h en Barcelona",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Fontanería Low Cost Barcelona | Urgencias 24h | Precios Justos",
+    "description": "✓ Fontanería profesional en Barcelona ✓ Urgencias 24/7 ✓ Respuesta rápida ✓ Precios transparentes. También piscinas y electricidad. Llama al 677 133 242."
+  },
+  "home": {
+    "headline": "Fontanería, Piscinas y Electricidad Profesional en Barcelona",
+    "sub": "Urgencias 24/7 · Respuesta Inmediata · Precios Transparentes · Trabajo Garantizado",
+    "cta_call": "Llamar Ahora",
+    "cta_quote": "Presupuesto Gratis",
+    "benefits": {
+      "title": "¿Por Qué Confiar en Nosotros?",
+      "response": "Respuesta 24/7",
+      "pricing": "Precios Transparentes",
+      "quality": "Trabajo Garantizado",
+      "experience": "Equipo Profesional"
+    }
+  },
+  "services": {
+    "fontaneria": {
+      "title": "Fontanería Profesional",
+      "desc": "Reparaciones urgentes, instalaciones y mantenimiento. Solucionamos fugas, atascos, averías en calderas y mucho más. Disponibles 24h para emergencias.",
+      "features": [
+        "Reparación Urgente de Fugas y Averías",
+        "Instalación y Mantenimiento de Calderas",
+        "Desatascos y Limpieza de Tuberías",
+        "Reformas Completas de Baños y Cocinas"
+      ]
+    },
+    "piscinas": {
+      "title": "Mantenimiento de Piscinas",
+      "desc": "Mantenimiento completo, limpieza, reparaciones y puesta a punto. Mantenga su piscina cristalina y lista para disfrutar todo el año.",
+      "features": [
+        "Mantenimiento Regular y Limpieza",
+        "Reparación de Sistemas de Filtrado y Bombas",
+        "Tratamiento Químico del Agua",
+        "Renovación y Acondicionamiento"
+      ]
+    },
+    "electricidad": {
+      "title": "Servicios Eléctricos",
+      "desc": "Instalaciones eléctricas seguras, reparaciones urgentes y mantenimiento preventivo. Profesionales certificados disponibles 24h.",
+      "features": [
+        "Reparaciones Eléctricas de Urgencia",
+        "Instalaciones y Cableado Certificado",
+        "Cuadros Eléctricos y Automatismos",
+        "Inspecciones y Certificados de Seguridad"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Solicite Su Presupuesto Gratuito",
+    "intro": "Responda en menos de 24 horas. Sin compromiso. Precios claros y competitivos. Complete el formulario o llámenos directamente.",
+    "success": "✅ Gracias. Hemos recibido su solicitud y le contactaremos en breve.",
+    "form": {
+      "name": "Su Nombre",
+      "phone": "Teléfono de Contacto",
+      "email": "Correo Electrónico",
+      "service": "¿Qué Servicio Necesita?",
+      "location": "Ciudad o Zona",
+      "message": "Cuéntenos qué necesita (opcional)",
+      "submit": "Solicitar Presupuesto",
+      "call": "Llamar Ahora"
+    }
+  },
+  "legal": {
+    "title": "Información Legal",
+    "privacy": "Política de Privacidad",
+    "legal": "Aviso Legal",
+    "cookies": "Política de Cookies"
+  }
+}

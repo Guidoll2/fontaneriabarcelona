@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Fontaneria Low Cost Barcelona | Urgències 24h | Preus Justos",
+    "description": "✓ Fontaneria professional a Barcelona ✓ Urgències 24/7 ✓ Resposta ràpida ✓ Preus transparents. També piscines i electricitat. Truca al 677 133 242."
+  },
+  "home": {
+    "headline": "Fontaneria, Piscines i Electricitat Professional a Barcelona",
+    "sub": "Urgències 24/7 · Resposta Immediata · Preus Transparents · Treball Garantit",
+    "cta_call": "Trucar Ara",
+    "cta_quote": "Pressupost Gratis",
+    "benefits": {
+      "title": "Per Què Confiar en Nosaltres?",
+      "response": "Resposta 24/7",
+      "pricing": "Preus Transparents",
+      "quality": "Treball Garantit",
+      "experience": "Equip Professional"
+    }
+  },
+  "services": {
+    "fontaneria": {
+      "title": "Fontaneria Professional",
+      "desc": "Reparacions urgents, instal·lacions i manteniment. Solucionem fugues, embussos, avaries en calderes i molt més. Disponibles 24h per emergències.",
+      "features": [
+        "Reparació Urgent de Fugues i Avaries",
+        "Instal·lació i Manteniment de Calderes",
+        "Desembussos i Neteja de Canonades",
+        "Reformes Completes de Banys i Cuines"
+      ]
+    },
+    "piscinas": {
+      "title": "Manteniment de Piscines",
+      "desc": "Manteniment complet, neteja, reparacions i posada a punt. Mantingueu la vostra piscina cristal·lina i llesta per gaudir tot l'any.",
+      "features": [
+        "Manteniment Regular i Neteja",
+        "Reparació de Sistemes de Filtrat i Bombes",
+        "Tractament Químic de l'Aigua",
+        "Renovació i Condicionament"
+      ]
+    },
+    "electricidad": {
+      "title": "Serveis Elèctrics",
+      "desc": "Instal·lacions elèctriques segures, reparacions urgents i manteniment preventiu. Professionals certificats disponibles 24h.",
+      "features": [
+        "Reparacions Elèctriques d'Urgència",
+        "Instal·lacions i Cablejat Certificat",
+        "Quadres Elèctrics i Automatismes",
+        "Inspeccions i Certificats de Seguretat"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Sol·liciti el Seu Pressupost Gratuït",
+    "intro": "Resposta en menys de 24 hores. Sense compromís. Preus clars i competitius. Ompli el formulari o truqui'ns directament.",
+    "success": "✅ Gràcies. Hem rebut la seva sol·licitud i el contactarem aviat.",
+    "form": {
+      "name": "El Seu Nom",
+      "phone": "Telèfon de Contacte",
+      "email": "Correu Electrònic",
+      "service": "Quin Servei Necessita?",
+      "location": "Ciutat o Zona",
+      "message": "Expliqui'ns què necessita (opcional)",
+      "submit": "Sol·licitar Pressupost",
+      "call": "Trucar Ara"
+    }
+  },
+  "legal": {
+    "title": "Informació Legal",
+    "privacy": "Política de Privacitat",
+    "legal": "Avís Legal",
+    "cookies": "Política de Galetes"
+  }
+}

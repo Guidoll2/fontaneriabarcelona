@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Fontanería Low Cost Barcelona | 24/7 Emergency | Fair Prices",
+    "description": "✓ Professional plumbing in Barcelona ✓ 24/7 emergencies ✓ Fast response ✓ Transparent pricing. Also pools and electrical services. Call 677 133 242."
+  },
+  "home": {
+    "headline": "Professional Plumbing, Pools & Electrical Services in Barcelona",
+    "sub": "24/7 Emergencies · Immediate Response · Transparent Pricing · Guaranteed Work",
+    "cta_call": "Call Now",
+    "cta_quote": "Free Quote",
+    "benefits": {
+      "title": "Why Trust Us?",
+      "response": "24/7 Response",
+      "pricing": "Transparent Pricing",
+      "quality": "Guaranteed Work",
+      "experience": "Professional Team"
+    }
+  },
+  "services": {
+    "fontaneria": {
+      "title": "Professional Plumbing",
+      "desc": "Emergency repairs, installations and maintenance. We fix leaks, blockages, boiler problems and more. Available 24/7 for emergencies.",
+      "features": [
+        "Emergency Leak and Breakdown Repairs",
+        "Boiler Installation & Maintenance",
+        "Drain Unblocking and Pipe Cleaning",
+        "Complete Bathroom & Kitchen Renovations"
+      ]
+    },
+    "piscinas": {
+      "title": "Pool Maintenance",
+      "desc": "Complete maintenance, cleaning, repairs and conditioning. Keep your pool crystal clear and ready to enjoy all year round.",
+      "features": [
+        "Regular Maintenance and Cleaning",
+        "Filter System and Pump Repairs",
+        "Chemical Water Treatment",
+        "Pool Renovation and Conditioning"
+      ]
+    },
+    "electricidad": {
+      "title": "Electrical Services",
+      "desc": "Safe electrical installations, emergency repairs and preventive maintenance. Certified professionals available 24/7.",
+      "features": [
+        "Emergency Electrical Repairs",
+        "Certified Installation & Wiring",
+        "Electrical Panels and Automation",
+        "Safety Inspections and Certifications"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Request Your Free Quote",
+    "intro": "Response within 24 hours. No obligation. Clear and competitive pricing. Fill out the form or call us directly.",
+    "success": "✅ Thank you. We've received your request and will contact you shortly.",
+    "form": {
+      "name": "Your Name",
+      "phone": "Contact Phone",
+      "email": "Email Address",
+      "service": "What Service Do You Need?",
+      "location": "City or Area",
+      "message": "Tell us what you need (optional)",
+      "submit": "Request Quote",
+      "call": "Call Now"
+    }
+  },
+  "legal": {
+    "title": "Legal Information",
+    "privacy": "Privacy Policy",
+    "legal": "Legal Notice",
+    "cookies": "Cookie Policy"
+  }
+}
