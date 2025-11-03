@@ -21,7 +21,7 @@ export default function Footer({ locale = "es" }: { locale?: string }) {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 rounded-lg overflow-hidden">
                 <Image 
-                  src="/logo.png" 
+                  src="/logo.jpeg" 
                   alt="Fontanería Logo" 
                   fill
                   className="object-cover"
@@ -36,9 +36,9 @@ export default function Footer({ locale = "es" }: { locale?: string }) {
               </div>
             </div>
             <p className="text-sm text-secondary-300 leading-relaxed">
-              {t('Servicios profesionales de fontanería, mantenimiento de piscinas y electricidad en toda la provincia de Barcelona.',
-                 'Professional plumbing, pool maintenance and electrical services throughout Barcelona province.',
-                 'Serveis professionals de fontaneria, manteniment de piscines i electricitat a tota la província de Barcelona.')}
+              {t('Servicios profesionales de fontanería y mantenimiento de piscinas en Terrassa, Vallès y comarca de Barcelona. Emergencias 24 horas.',
+                 'Professional plumbing and pool maintenance services in Terrassa, Vallès and Barcelona region. 24-hour emergencies.',
+                 'Serveis professionals de fontaneria i manteniment de piscines a Terrassa, Vallès i comarca de Barcelona. Urgències 24 hores.')}
             </p>
           </div>
 
@@ -64,15 +64,6 @@ export default function Footer({ locale = "es" }: { locale?: string }) {
                 >
                   <span className="mr-2 text-primary-400">→</span>
                   {t('Mantenimiento de Piscinas', 'Pool Maintenance', 'Manteniment de Piscines')}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href={`/${locale}/servicios/electricidad`} 
-                  className="text-secondary-300 hover:text-primary-400 transition-colors inline-flex items-center group"
-                >
-                  <span className="mr-2 text-primary-400">→</span>
-                  {t('Servicios Eléctricos', 'Electrical Services', 'Serveis Elèctrics')}
                 </Link>
               </li>
               <li>

@@ -5,14 +5,14 @@ import { montserrat, poppins } from "./fonts";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
-    template: "%s | Fontanería Low Cost",
-    default: "Fontanería Low Cost - Servicios 24h en Barcelona",
+    template: "%s | Fontanería Terrassa",
+    default: "Fontanería Terrassa - Servicios 24h | Piscinas",
   },
-  description: "Fontanería Low Cost — Servicios profesionales de fontanería, piscinas y electricidad en la provincia de Barcelona. Urgencias 24h.",
-  applicationName: "Fontanería Low Cost",
-  authors: [{ name: "Fontanería Low Cost" }],
+  description: "Fontanería profesional en Terrassa y comarca. Servicios de fontanería y mantenimiento de piscinas. Urgencias 24h en Vallès Occidental, Barcelona y comarca.",
+  applicationName: "Fontanería Terrassa",
+  authors: [{ name: "Fontanería Terrassa" }],
   generator: "Next.js",
-  keywords: ["fontanería", "fontanero", "plomero", "electricista", "piscinas", "barcelona", "24h", "urgencias"],
+  keywords: ["fontanería", "fontanero terrassa", "piscinas", "mantenimiento piscinas", "vallès occidental", "barcelona", "24h", "urgencias", "sabadell", "rubí", "calefones", "grifería"],
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,

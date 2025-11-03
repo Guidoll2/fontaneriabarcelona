@@ -1,8 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
 
 interface ServicePageLayoutProps {
   title: string;
@@ -10,6 +15,7 @@ interface ServicePageLayoutProps {
   image: string;
   features: string[];
   locale: string;
+  galleryImages?: GalleryImage[];
 }
 
 export default function ServicePageLayout({ 
@@ -17,8 +23,11 @@ export default function ServicePageLayout({
   description, 
   image, 
   features,
-  locale 
+  locale,
+  galleryImages 
 }: ServicePageLayoutProps) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -57,25 +66,6 @@ export default function ServicePageLayout({
         </div>
       </section>
 
-      {/* Image Section */}
-      <section className="section-padding bg-secondary-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative h-96 rounded-2xl overflow-hidden shadow-large"
-          >
-            <Image 
-              src={image} 
-              alt={title} 
-              fill 
-              className="object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="section-padding bg-white">
@@ -118,6 +108,95 @@ export default function ServicePageLayout({
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      {galleryImages && galleryImages.length > 0 && (
+        <section className="section-padding bg-secondary-50">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-center mb-4">
+                {locale === 'en' ? 'Our Work' : 'Nuestros Trabajos'}
+              </h2>
+              <p className="text-center text-secondary-600 text-lg mb-12 max-w-2xl mx-auto">
+                {locale === 'en' 
+                  ? 'Real photos from our completed projects' 
+                  : 'Fotos reales de nuestros trabajos realizados'}
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {galleryImages.map((img, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group"
+                    onClick={() => setSelectedImage(img.src)}
+                  >
+                    <Image 
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-5xl w-full h-[80vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="relative w-full h-full rounded-lg overflow-hidden">
+                <Image 
+                  src={selectedImage}
+                  alt="Vista ampliada"
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-primary text-white">

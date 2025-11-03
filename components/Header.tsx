@@ -65,9 +65,9 @@ export default function Header({ locale }: { locale?: string }) {
   ];
 
   const getMenuLabel = (locale: string) => {
-    if (locale === 'en') return { fontaneria: 'Plumbing', piscinas: 'Pools', electricidad: 'Electrical' };
-    if (locale === 'ca') return { fontaneria: 'Fontaneria', piscinas: 'Piscines', electricidad: 'Electricitat' };
-    return { fontaneria: 'Fontanería', piscinas: 'Piscinas', electricidad: 'Electricidad' };
+    if (locale === 'en') return { fontaneria: 'Plumbing', piscinas: 'Pools' };
+    if (locale === 'ca') return { fontaneria: 'Fontaneria', piscinas: 'Piscines' };
+    return { fontaneria: 'Fontanería', piscinas: 'Piscinas' };
   };
 
   const labels = getMenuLabel(currentLocale);
@@ -75,7 +75,6 @@ export default function Header({ locale }: { locale?: string }) {
   const menuItems = [
     { href: `/servicios/fontaneria`, label: labels.fontaneria },
     { href: `/servicios/piscinas`, label: labels.piscinas },
-    { href: `/servicios/electricidad`, label: labels.electricidad },
   ];
 
   return (
@@ -94,7 +93,7 @@ export default function Header({ locale }: { locale?: string }) {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Image 
-                src="/logo.png" 
+                src="/logo.jpeg" 
                 alt="Fontanería Logo" 
                 width={48}
                 height={48}

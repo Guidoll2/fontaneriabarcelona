@@ -76,8 +76,8 @@ export function localBusinessJsonLd({ locale = 'es', path = '' } = {}) {
     openingHours: "Mo-Su 00:00-23:59",
     priceRange: "€€",
     description: locale === 'en' 
-      ? 'Professional plumbing, pools and electrical services. 24/7 emergencies in Barcelona. Fast response, fair pricing and guaranteed work.' 
-      : 'Servicios profesionales de fontanería, piscinas y electricidad. Urgencias 24h en Barcelona. Respuesta rápida, precios justos y trabajo garantizado.',
+      ? 'Professional plumbing and pool maintenance services. 24/7 emergencies in Terrassa, Vallès and Barcelona. Fast response, transparent pricing and guaranteed work.' 
+      : 'Servicios profesionales de fontanería y mantenimiento de piscinas. Urgencias 24h en Terrassa, Vallès y Barcelona. Respuesta rápida, precios justos y trabajo garantizado.',
     sameAs: [
       "https://wa.me/34677133242",
     ],
@@ -89,8 +89,8 @@ export function localBusinessJsonLd({ locale = 'es', path = '' } = {}) {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: locale === 'en' ? "Plumbing Services" : "Servicios de Fontanería",
-            description: locale === 'en' ? "Repairs, installation and maintenance: leaks, pipes, boilers and more" : "Reparaciones, instalación y mantenimiento: fugas, tuberías, calderas y más"
+            name: locale === 'en' ? "Plumbing Services 24h" : "Servicios de Fontanería 24h",
+            description: locale === 'en' ? "Repairs, installation and maintenance: faucets, sinks, water heaters, toilets, drains and more. 24/7 emergencies" : "Reparaciones, instalación y mantenimiento: grifería, bachas, calefones, inodoros, desagües y más. Urgencias 24/7"
           }
         },
         {
@@ -98,15 +98,7 @@ export function localBusinessJsonLd({ locale = 'es', path = '' } = {}) {
           itemOffered: {
             "@type": "Service",
             name: locale === 'en' ? "Pool Services" : "Servicios de Piscinas",
-            description: locale === 'en' ? "Maintenance, filter repair, treatment and pool refurbishment" : "Mantenimiento, reparación de filtros, tratamiento y puesta a punto"
-          }
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: locale === 'en' ? "Electrical Services" : "Servicios de Electricidad",
-            description: locale === 'en' ? "Installations, breakdowns, electrical panels and 24/7 emergencies" : "Instalaciones, averías, cuadros eléctricos y urgencias 24/7"
+            description: locale === 'en' ? "Filter equipment repair and upgrade, pipe repair, skimmer fixes, and complete pool maintenance" : "Reparación y actualización de equipos de filtrado, reparación de cañerías, arreglo de skimmers y mantenimiento completo"
           }
         }
       ]

@@ -164,8 +164,7 @@ export default function BudgetForm({ locale = "es" }: { locale?: string }) {
               <option value="">{t("Seleccionar servicio", "Select service", "Seleccionar servei")}</option>
               <option value="fontaneria">{t("Fontanería", "Plumbing", "Fontaneria")}</option>
               <option value="piscinas">{t("Piscinas", "Pools", "Piscines")}</option>
-              <option value="electricidad">{t("Electricidad", "Electrical", "Electricitat")}</option>
-              <option value="urgencia">{t("Urgencia", "Emergency", "Urgència")}</option>
+              <option value="urgencia">{t("Urgencia 24h", "24h Emergency", "Urgència 24h")}</option>
             </select>
           </div>
 

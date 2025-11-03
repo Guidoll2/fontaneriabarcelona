@@ -1,52 +1,80 @@
 {
   "site": {
-    "title": "Fontanería Low Cost Barcelona | Urgencias 24h | Precios Justos",
-    "description": "✓ Fontanería profesional en Barcelona ✓ Urgencias 24/7 ✓ Respuesta rápida ✓ Precios transparentes. También piscinas y electricidad. Llama al 677 133 242."
+    "title": "Fontanería Terrassa | Urgencias 24h | Servicio Rápido en Vallès",
+    "description": "✓ Fontaneros profesionales en Terrassa y comarca ✓ Emergencias 24/7 ✓ Reparación e instalación ✓ Mantenimiento de piscinas. Servicio en Vallès Occidental, Barcelona y comarca. Llama al 677 133 242."
   },
   "home": {
-    "headline": "Fontanería, Piscinas y Electricidad Profesional en Barcelona",
-    "sub": "Urgencias 24/7 · Respuesta Inmediata · Precios Transparentes · Trabajo Garantizado",
+    "headline": "Fontanería Profesional y Mantenimiento de Piscinas en Terrassa",
+    "sub": "Emergencias 24/7 · Servicio Rápido · Presupuesto Sin Compromiso · Trabajo Garantizado",
     "cta_call": "Llamar Ahora",
     "cta_quote": "Presupuesto Gratis",
     "benefits": {
-      "title": "¿Por Qué Confiar en Nosotros?",
-      "response": "Respuesta 24/7",
-      "pricing": "Precios Transparentes",
+      "title": "¿Por Qué Elegirnos?",
+      "response": "Emergencias 24/7",
+      "pricing": "Presupuesto Sin Compromiso",
       "quality": "Trabajo Garantizado",
-      "experience": "Equipo Profesional"
+      "experience": "Especialistas en Terrassa"
     }
   },
   "services": {
     "fontaneria": {
-      "title": "Fontanería Profesional",
-      "desc": "Reparaciones urgentes, instalaciones y mantenimiento. Solucionamos fugas, atascos, averías en calderas y mucho más. Disponibles 24h para emergencias.",
+      "title": "Fontanería Profesional 24h",
+      "desc": "Servicio de fontanería integral en Terrassa y comarca. Reparamos e instalamos grifería, bachas, calefones, inodoros, desagües y más. Disponibles 24 horas para emergencias.",
       "features": [
-        "Reparación Urgente de Fugas y Averías",
-        "Instalación y Mantenimiento de Calderas",
-        "Desatascos y Limpieza de Tuberías",
+        "Emergencias 24/7 - Respuesta Inmediata",
+        "Instalación y Reparación de Grifería (baño y cocina)",
+        "Bachas Simples y Dobles - Todos los Modelos",
+        "Calefones y Calentadores (internos y externos)",
+        "Reparación de Inodoros y Desagües",
+        "Solución de Fugas y Roturas",
+        "Destapaciones y Limpieza de Cañerías",
         "Reformas Completas de Baños y Cocinas"
       ]
     },
     "piscinas": {
-      "title": "Mantenimiento de Piscinas",
-      "desc": "Mantenimiento completo, limpieza, reparaciones y puesta a punto. Mantenga su piscina cristalina y lista para disfrutar todo el año.",
+      "title": "Piscinas - Instalación, Reparación y Mantenimiento",
+      "desc": "Especialistas en mantenimiento y reparación de piscinas. Actualizamos equipos de filtrado, reparamos cañerías, arreglamos skimmers y dejamos su piscina lista para disfrutar.",
       "features": [
-        "Mantenimiento Regular y Limpieza",
-        "Reparación de Sistemas de Filtrado y Bombas",
-        "Tratamiento Químico del Agua",
-        "Renovación y Acondicionamiento"
-      ]
-    },
-    "electricidad": {
-      "title": "Servicios Eléctricos",
-      "desc": "Instalaciones eléctricas seguras, reparaciones urgentes y mantenimiento preventivo. Profesionales certificados disponibles 24h.",
-      "features": [
-        "Reparaciones Eléctricas de Urgencia",
-        "Instalaciones y Cableado Certificado",
-        "Cuadros Eléctricos y Automatismos",
-        "Inspecciones y Certificados de Seguridad"
+        "Reparación de Equipos de Filtrado",
+        "Instalación y Actualización de Filtros Nuevos",
+        "Reparación de Cañerías y Tuberías",
+        "Arreglo de Skimmers y Sistemas de Limpieza",
+        "Puesta a Punto de Piscinas",
+        "Mantenimiento Preventivo y Correctivo",
+        "Servicio para Piscinas Cubiertas y al Aire Libre",
+        "Presupuesto Sin Compromiso"
       ]
     }
+  },
+  "coverage": {
+    "title": "Zonas de Servicio",
+    "description": "Ofrecemos nuestros servicios de fontanería y piscinas en las siguientes zonas:",
+    "zones": [
+      {
+        "name": "Vallès Occidental",
+        "cities": "Terrassa, Sabadell, Rubí, Castellar del Vallès, Sant Quirze del Vallès, Cerdanyola, Montcada i Reixac, Polinyà, Santa Perpètua, Palau-solità i Plegamans"
+      },
+      {
+        "name": "Vallès Oriental",
+        "cities": "Granollers, Parets del Vallès, Lliçà d'Amunt, Lliçà de Vall, La Roca del Vallès, Cardedeu, Caldes de Montbui"
+      },
+      {
+        "name": "Barcelonès",
+        "cities": "Barcelona, Badalona, Santa Coloma de Gramenet, Sant Adrià del Besòs, Tiana, Montgat"
+      },
+      {
+        "name": "Baix Llobregat",
+        "cities": "Sant Cugat del Vallès, Molins de Rei, Sant Vicenç dels Horts, Martorell, Esparreguera, Olesa de Montserrat, Castellbisbal"
+      },
+      {
+        "name": "Bages",
+        "cities": "Manresa, Sant Vicenç de Castellet, Castellbell i el Vilar, Navarcles, Artés, Castellnou de Bages"
+      },
+      {
+        "name": "Maresme",
+        "cities": "Mataró, Cabrera de Mar, Vilassar de Mar, Premià de Mar, El Masnou, Alella"
+      }
+    ]
   },
   "contact": {
     "title": "Solicite Su Presupuesto Gratuito",

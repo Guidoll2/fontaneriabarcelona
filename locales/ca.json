@@ -1,52 +1,80 @@
 {
   "site": {
-    "title": "Fontaneria Low Cost Barcelona | Urgències 24h | Preus Justos",
-    "description": "✓ Fontaneria professional a Barcelona ✓ Urgències 24/7 ✓ Resposta ràpida ✓ Preus transparents. També piscines i electricitat. Truca al 677 133 242."
+    "title": "Fontaneria Terrassa | Urgències 24h | Servei Ràpid al Vallès",
+    "description": "✓ Fontaners professionals a Terrassa i comarca ✓ Urgències 24/7 ✓ Reparació i instal·lació ✓ Manteniment de piscines. Servei al Vallès Occidental, Barcelona i comarca. Truca al 677 133 242."
   },
   "home": {
-    "headline": "Fontaneria, Piscines i Electricitat Professional a Barcelona",
-    "sub": "Urgències 24/7 · Resposta Immediata · Preus Transparents · Treball Garantit",
+    "headline": "Fontaneria Professional i Manteniment de Piscines a Terrassa",
+    "sub": "Urgències 24/7 · Servei Ràpid · Pressupost Sense Compromís · Treball Garantit",
     "cta_call": "Trucar Ara",
     "cta_quote": "Pressupost Gratis",
     "benefits": {
-      "title": "Per Què Confiar en Nosaltres?",
-      "response": "Resposta 24/7",
-      "pricing": "Preus Transparents",
+      "title": "Per Què Triar-nos?",
+      "response": "Urgències 24/7",
+      "pricing": "Pressupost Sense Compromís",
       "quality": "Treball Garantit",
-      "experience": "Equip Professional"
+      "experience": "Especialistes a Terrassa"
     }
   },
   "services": {
     "fontaneria": {
-      "title": "Fontaneria Professional",
-      "desc": "Reparacions urgents, instal·lacions i manteniment. Solucionem fugues, embussos, avaries en calderes i molt més. Disponibles 24h per emergències.",
+      "title": "Fontaneria Professional 24h",
+      "desc": "Servei de fontaneria integral a Terrassa i comarca. Reparem i instal·lem aixetes, piques, escalfadors, vàters, desguassos i més. Disponibles 24 hores per urgències.",
       "features": [
-        "Reparació Urgent de Fugues i Avaries",
-        "Instal·lació i Manteniment de Calderes",
-        "Desembussos i Neteja de Canonades",
+        "Urgències 24/7 - Resposta Immediata",
+        "Instal·lació i Reparació d'Aixetes (bany i cuina)",
+        "Piques Simples i Dobles - Tots els Models",
+        "Escalfadors (interns i externs)",
+        "Reparació de Vàters i Desguassos",
+        "Solució de Fugues i Trencaments",
+        "Destapaments i Neteja de Canonades",
         "Reformes Completes de Banys i Cuines"
       ]
     },
     "piscinas": {
-      "title": "Manteniment de Piscines",
-      "desc": "Manteniment complet, neteja, reparacions i posada a punt. Mantingueu la vostra piscina cristal·lina i llesta per gaudir tot l'any.",
+      "title": "Piscines - Instal·lació, Reparació i Manteniment",
+      "desc": "Especialistes en manteniment i reparació de piscines. Actualitzem equips de filtrat, reparem canonades, arreglem skimmers i deixem la seva piscina llesta per gaudir.",
       "features": [
-        "Manteniment Regular i Neteja",
-        "Reparació de Sistemes de Filtrat i Bombes",
-        "Tractament Químic de l'Aigua",
-        "Renovació i Condicionament"
-      ]
-    },
-    "electricidad": {
-      "title": "Serveis Elèctrics",
-      "desc": "Instal·lacions elèctriques segures, reparacions urgents i manteniment preventiu. Professionals certificats disponibles 24h.",
-      "features": [
-        "Reparacions Elèctriques d'Urgència",
-        "Instal·lacions i Cablejat Certificat",
-        "Quadres Elèctrics i Automatismes",
-        "Inspeccions i Certificats de Seguretat"
+        "Reparació d'Equips de Filtrat",
+        "Instal·lació i Actualització de Filtres Nous",
+        "Reparació de Canonades i Tubs",
+        "Arranjament de Skimmers i Sistemes de Neteja",
+        "Posada a Punt de Piscines",
+        "Manteniment Preventiu i Correctiu",
+        "Servei per Piscines Cobertes i a l'Aire Lliure",
+        "Pressupost Sense Compromís"
       ]
     }
+  },
+  "coverage": {
+    "title": "Zones de Servei",
+    "description": "Oferim els nostres serveis de fontaneria i piscines a les següents zones:",
+    "zones": [
+      {
+        "name": "Vallès Occidental",
+        "cities": "Terrassa, Sabadell, Rubí, Castellar del Vallès, Sant Quirze del Vallès, Cerdanyola, Montcada i Reixac, Polinyà, Santa Perpètua, Palau-solità i Plegamans"
+      },
+      {
+        "name": "Vallès Oriental",
+        "cities": "Granollers, Parets del Vallès, Lliçà d'Amunt, Lliçà de Vall, La Roca del Vallès, Cardedeu, Caldes de Montbui"
+      },
+      {
+        "name": "Barcelonès",
+        "cities": "Barcelona, Badalona, Santa Coloma de Gramenet, Sant Adrià del Besòs, Tiana, Montgat"
+      },
+      {
+        "name": "Baix Llobregat",
+        "cities": "Sant Cugat del Vallès, Molins de Rei, Sant Vicenç dels Horts, Martorell, Esparreguera, Olesa de Montserrat, Castellbisbal"
+      },
+      {
+        "name": "Bages",
+        "cities": "Manresa, Sant Vicenç de Castellet, Castellbell i el Vilar, Navarcles, Artés, Castellnou de Bages"
+      },
+      {
+        "name": "Maresme",
+        "cities": "Mataró, Cabrera de Mar, Vilassar de Mar, Premià de Mar, El Masnou, Alella"
+      }
+    ]
   },
   "contact": {
     "title": "Sol·liciti el Seu Pressupost Gratuït",

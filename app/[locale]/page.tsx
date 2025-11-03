@@ -25,11 +25,6 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    electricidad: (
-      <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
   };
 
   return (
@@ -195,16 +190,16 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <h2 className="mb-4">{locale === 'en' ? 'Our Services' : 'Nuestros Servicios'}</h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               {locale === 'en' 
-                ? 'Professional solutions for all your plumbing, pool, and electrical needs' 
-                : 'Soluciones profesionales para todas tus necesidades de fontanería, piscinas y electricidad'}
+                ? 'Professional solutions for all your plumbing and pool needs' 
+                : 'Soluciones profesionales para todas tus necesidades de fontanería y piscinas'}
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <ServiceCard 
               title={dict.services.fontaneria.title} 
               description={dict.services.fontaneria.desc} 
-              img="/Fontanero-2.jpeg" 
+              img="/bachaoro.jpeg" 
               href={`/${locale}/servicios/fontaneria`}
               icon={serviceIcons.fontaneria}
               locale={locale}
@@ -212,25 +207,71 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <ServiceCard 
               title={dict.services.piscinas.title} 
               description={dict.services.piscinas.desc} 
-              img="/Fontanero-piscina.jpeg" 
+              img="/piscinaslista3.jpeg" 
               href={`/${locale}/servicios/piscinas`}
               icon={serviceIcons.piscinas}
-              locale={locale}
-            />
-            <ServiceCard 
-              title={dict.services.electricidad.title} 
-              description={dict.services.electricidad.desc} 
-              img="/Medidores.jpeg" 
-              href={`/${locale}/servicios/electricidad`}
-              icon={serviceIcons.electricidad}
               locale={locale}
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Coverage Area Section */}
       <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="mb-4">{locale === 'en' ? 'Service Areas' : locale === 'ca' ? 'Zones de Servei' : 'Zonas de Servicio'}</h2>
+            <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
+              {locale === 'en' 
+                ? 'We provide plumbing and pool services throughout Terrassa and the greater Barcelona region' 
+                : locale === 'ca'
+                ? 'Oferim serveis de fontaneria i piscines a Terrassa i la regió de Barcelona'
+                : 'Ofrecemos servicios de fontanería y piscinas en Terrassa y la comarca de Barcelona'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {dict.coverage?.zones?.map((zone: { name: string; cities: string }, idx: number) => (
+              <div key={idx} className="card p-6 hover:shadow-xl transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-secondary-900 mb-3">{zone.name}</h3>
+                    <p className="text-sm text-secondary-600 leading-relaxed">{zone.cities}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-primary-50 rounded-xl p-6">
+              <svg className="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <div className="text-center sm:text-left">
+                <p className="text-lg font-semibold text-secondary-900">
+                  {locale === 'en' ? 'Not sure if we cover your area?' : locale === 'ca' ? 'No estàs segur si cobrim la teva zona?' : '¿No estás seguro si cubrimos tu zona?'}
+                </p>
+                <p className="text-secondary-600">
+                  {locale === 'en' ? 'Call us and ask! We may service your location.' : locale === 'ca' ? "Truca'ns i pregunta! Potser donem servei a la teva ubicació." : '¡Llámanos y consulta! Podemos atender tu ubicación.'}
+                </p>
+              </div>
+              <a href="tel:+34677133242" className="btn-primary whitespace-nowrap">
+                {locale === 'en' ? 'Call Now' : locale === 'ca' ? 'Trucar Ara' : 'Llamar Ahora'}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="section-padding bg-secondary-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="mb-4">{dict.home.benefits.title}</h2>
@@ -277,7 +318,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="mb-4">{locale === 'en' ? 'What Our Clients Say' : 'Lo Que Dicen Nuestros Clientes'}</h2>
@@ -316,7 +357,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-secondary-50">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
@@ -328,7 +369,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image 
-                src="/Fontanero-2.jpeg"
+                src="/maletin.jpeg"
                 alt={locale === 'en' ? 'Our professional team' : 'Nuestro equipo profesional'}
                 fill
                 className="object-cover"
@@ -355,8 +396,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 </h2>
                 <p className="text-lg text-secondary-600">
                   {locale === 'en' 
-                    ? 'Our team of certified technicians has years of experience in plumbing, pool maintenance, and electrical services. We are committed to providing quality work and exceptional customer service.' 
-                    : 'Nuestro equipo de técnicos certificados cuenta con años de experiencia en fontanería, mantenimiento de piscinas y servicios eléctricos. Estamos comprometidos con ofrecer trabajos de calidad y un servicio al cliente excepcional.'}
+                    ? 'Our team of certified technicians has years of experience in plumbing and pool maintenance. We are committed to providing quality work and exceptional customer service.' 
+                    : 'Nuestro equipo de técnicos certificados cuenta con años de experiencia en fontanería y mantenimiento de piscinas. Estamos comprometidos con ofrecer trabajos de calidad y un servicio al cliente excepcional.'}
                 </p>
               </div>
 
