@@ -31,6 +31,20 @@
         "Reformes Completes de Banys i Cuines"
       ]
     },
+    "electricidad": {
+      "title": "Electricitat Professional",
+      "desc": "Servei elèctric professional a Terrassa i comarca. Instal·lacions, reparacions, quadres elèctrics, il·luminació i més. Servei d'urgències disponible.",
+      "features": [
+        "Instal·lacions Elèctriques Completes",
+        "Reparació d'Avaries Elèctriques",
+        "Quadres Elèctrics i Automatismes",
+        "Il·luminació LED i Domòtica",
+        "Butlletins i Certificats Elèctrics",
+        "Urgències Elèctriques",
+        "Inspecció i Manteniment",
+        "Pressupost Sense Compromís"
+      ]
+    },
     "piscinas": {
       "title": "Piscines - Instal·lació, Reparació i Manteniment",
       "desc": "Especialistes en manteniment i reparació de piscines. Actualitzem equips de filtrat, reparem canonades, arreglem skimmers i deixem la seva piscina llesta per gaudir.",
