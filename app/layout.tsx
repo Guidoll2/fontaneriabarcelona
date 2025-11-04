@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { montserrat, poppins } from "./fonts";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
@@ -42,6 +43,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`scroll-smooth ${montserrat.variable} ${poppins.variable}`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="bg-white text-secondary-900 antialiased">{children}</body>
     </html>
   );

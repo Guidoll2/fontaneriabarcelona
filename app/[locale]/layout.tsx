@@ -1,6 +1,7 @@
 import "../../app/globals.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import EmergencyButton from "../../components/EmergencyButton";
 
 export const dynamic = "force-static";
 
@@ -14,6 +15,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         {children}
       </main>
       <Footer locale={locale} />
+      <EmergencyButton locale={locale} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 ﻿"use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackFormSubmission } from "./GoogleAnalytics";
 
 type Form = {
   nombre?: string;
@@ -96,6 +97,9 @@ export default function BudgetForm({ locale = "es" }: { locale?: string }) {
       });
       
       if (res.ok) {
+        // Track successful form submission
+        trackFormSubmission(form.servicio || 'general');
+        
         setStatus({ 
           type: "success", 
           message: t("Mensaje enviado!", "Message sent!", "Missatge enviat!")

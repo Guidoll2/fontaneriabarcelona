@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackPhoneCall } from "./GoogleAnalytics";
 
 const menuVariants = {
   closed: {
@@ -139,6 +140,7 @@ export default function Header({ locale }: { locale?: string }) {
             {/* Phone (hidden on mobile) */}
             <motion.a 
               href="tel:+34677133242"
+              onClick={() => trackPhoneCall('header_desktop')}
               className="hidden sm:flex items-center gap-2 text-secondary-700 hover:text-primary-600 font-semibold transition-colors"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -249,7 +251,10 @@ export default function Header({ locale }: { locale?: string }) {
                   <a
                     href="tel:+34677133242"
                     className="btn-secondary w-full text-center"
-                    onClick={closeMenu}
+                    onClick={() => {
+                      trackPhoneCall('header_mobile');
+                      closeMenu();
+                    }}
                   >
                     📞 677 133 242
                   </a>

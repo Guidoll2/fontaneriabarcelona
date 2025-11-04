@@ -7,6 +7,10 @@ import BudgetForm from "../../components/BudgetForm";
 import Image from "next/image";
 import { localBusinessJsonLd } from "../../lib/seo";
 import { motion } from "framer-motion";
+import { trackPhoneCall } from "../../components/GoogleAnalytics";
+import HeroImageCarousel from "../../components/HeroImageCarousel";
+import ZoneCard from "../../components/ZoneCard";
+import StatsSection from "../../components/StatsSection";
 
 export default function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = use(params);
@@ -30,39 +34,28 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
   return (
     <>
       {/* Hero Section */}
-      <section className="relative z-0 bg-gradient-to-br from-secondary-900 via-secondary-800 to-secondary-900 overflow-hidden">
+      <section className="relative z-0 bg-gradient-to-br from-sky-50 via-white to-cyan-50 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 z-0">
+        <div className="absolute inset-0 opacity-5 z-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(14, 165, 233) 1px, transparent 0)',
             backgroundSize: '40px 40px'
           }} />
         </div>
 
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 opacity-30 z-0">
-          <Image 
-            src="/Fontanero-1.jpeg" 
-            alt="" 
-            fill 
-            className="object-cover"
-            priority
-            unoptimized
-          />
-          {/* Gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/95 via-secondary-900/80 to-secondary-900/60" />
-        </div>
+        {/* Background Image Carousel with Overlay */}
+        <HeroImageCarousel />
 
         <div className="relative z-10 container-custom section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
-            <div className="text-white space-y-6 lg:space-y-8">
+            <div className="space-y-6 lg:space-y-8">
               {/* Badge */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 bg-accent-500/30 border border-accent-400/40 backdrop-blur-md px-4 py-2 rounded-full text-accent-200 font-medium shadow-lg"
+                className="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-400/40 backdrop-blur-md px-4 py-2 rounded-full text-sky-700 font-medium shadow-lg"
               >
                 <svg className="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -75,7 +68,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-balance text-gray-200 drop-shadow-lg"
+                className="text-balance text-sky-900 drop-shadow-sm"
               >
                 {dict.home.headline}
               </motion.h1>
@@ -85,7 +78,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-secondary-100 leading-relaxed max-w-xl drop-shadow-md"
+                className="text-xl text-cyan-900 leading-relaxed max-w-xl drop-shadow-sm"
               >
                 {dict.home.sub}
               </motion.p>
@@ -95,7 +88,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-white/15 backdrop-blur-lg border border-white/30 rounded-2xl p-6 shadow-2xl"
+                className="bg-white/70 backdrop-blur-lg border border-sky-200/60 rounded-2xl p-6 shadow-xl"
               >
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
@@ -105,10 +98,10 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                     { icon: "✓", text: locale === 'en' ? 'Quality Guaranteed' : 'Calidad Garantizada' },
                   ].map((benefit, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-accent-500 text-white flex items-center justify-center text-sm font-bold shadow-lg">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-sky-500 text-white flex items-center justify-center text-sm font-bold shadow-lg">
                         {benefit.icon}
                       </span>
-                      <span className="font-semibold text-white drop-shadow-md">{benefit.text}</span>
+                      <span className="font-semibold text-cyan-900 drop-shadow-sm">{benefit.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -123,7 +116,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               >
                 <a 
                   href="tel:+34677133242" 
-                  className="btn-accent btn-lg group shadow-xl hover:shadow-2xl"
+                  onClick={() => trackPhoneCall('hero_cta')}
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 active:bg-sky-800 transition-all duration-200 shadow-xl hover:shadow-2xl group"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -132,7 +126,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 </a>
                 <a 
                   href={`#contact`}
-                  className="btn-secondary btn-lg shadow-xl hover:shadow-2xl"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg rounded-lg bg-white text-cyan-900 font-semibold border-2 border-sky-300 hover:bg-sky-50 hover:border-sky-400 active:bg-sky-100 transition-all duration-200 shadow-xl hover:shadow-2xl"
                 >
                   {dict.home.cta_quote}
                 </a>
@@ -146,10 +140,10 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative hidden lg:flex flex-col gap-6"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/10 h-[400px]">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-sky-200/50 h-[400px]">
                 <Image 
-                  src="/Fontanero-1.jpeg" 
-                  alt={locale === 'en' ? 'Professional plumbing services' : 'Servicios profesionales de fontanería'} 
+                  src="/piscinalista.jpeg" 
+                  alt={locale === 'en' ? 'Professional pool services' : 'Servicios profesionales de piscinas'} 
                   fill
                   className="object-cover"
                   priority
@@ -162,17 +156,17 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="bg-white rounded-xl shadow-2xl p-6 border-4 border-accent-500/20"
+                className="bg-white rounded-xl shadow-2xl p-6 border-4 border-sky-200/60"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary-50 rounded-lg p-4">
-                    <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="bg-sky-50 rounded-lg p-4">
+                    <svg className="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-4xl font-bold text-primary-600">24/7</p>
-                    <p className="text-secondary-600 font-medium">
+                    <p className="text-4xl font-bold text-sky-600">24/7</p>
+                    <p className="text-cyan-900 font-medium">
                       {locale === 'en' ? 'Emergency Service' : 'Servicio de Urgencias'}
                     </p>
                   </div>
@@ -225,28 +219,26 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               {locale === 'en' 
                 ? 'We provide plumbing and pool services throughout Terrassa and the greater Barcelona region' 
                 : locale === 'ca'
-                ? 'Oferim serveis de fontaneria i piscines a Terrassa i la regió de Barcelona'
+                ? 'Oferim serveis de fontaneria i piscines a Terrassa i la región de Barcelona'
                 : 'Ofrecemos servicios de fontanería y piscinas en Terrassa y la comarca de Barcelona'}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {dict.coverage?.zones?.map((zone: { name: string; cities: string }, idx: number) => (
-              <div key={idx} className="card p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-secondary-900 mb-3">{zone.name}</h3>
-                    <p className="text-sm text-secondary-600 leading-relaxed">{zone.cities}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {dict.coverage?.zones?.map((zone: { name: string; cities: string }, idx: number) => {
+              const citiesArray = zone.cities.split(', ');
+              const firstFourCities = citiesArray.slice(0, 4);
+              const remainingCities = citiesArray.slice(4);
+              
+              return (
+                <ZoneCard 
+                  key={idx}
+                  zoneName={zone.name}
+                  firstFourCities={firstFourCities}
+                  remainingCities={remainingCities}
+                />
+              );
+            })}
           </div>
 
           <div className="mt-12 text-center">
@@ -270,52 +262,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="section-padding bg-secondary-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="mb-4">{dict.home.benefits.title}</h2>
-            <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
-              {locale === 'en' 
-                ? 'Experience and professionalism you can trust' 
-                : 'Experiencia y profesionalidad en la que puedes confiar'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                title: dict.home.benefits.response,
-                desc: locale === 'en' ? 'We respond quickly to your emergencies' : 'Respondemos rápidamente a tus urgencias'
-              },
-              { 
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                title: dict.home.benefits.pricing,
-                desc: locale === 'en' ? 'Clear pricing with no hidden fees' : 'Precios claros sin cargos ocultos'
-              },
-              { 
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                title: dict.home.benefits.quality,
-                desc: locale === 'en' ? 'All work comes with warranty' : 'Todos los trabajos con garantía'
-              },
-              { 
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-                title: dict.home.benefits.experience,
-                desc: locale === 'en' ? 'Professional and certified team' : 'Equipo profesional y certificado'
-              },
-            ].map((item, i) => (
-              <div key={i} className="card p-6 text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-600">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="text-secondary-600 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Stats Section - Nuestros Resultados */}
+      <StatsSection locale={locale} />
 
       {/* Testimonials Section */}
       <section className="section-padding bg-white">
