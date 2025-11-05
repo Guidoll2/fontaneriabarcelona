@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Fontanería Terrassa | Urgencias 24h | Servicio Rápido en Vallès",
-    "description": "✓ Fontaneros profesionales en Terrassa y comarca ✓ Emergencias 24/7 ✓ Reparación e instalación ✓ Mantenimiento de piscinas. Servicio en Vallès Occidental, Barcelona y comarca. Llama al 677 133 242."
+    "title": "Fontanería Barcelona | Emergencias 24h | Calderas y Piscinas",
+    "description": "✓ Fontaneros profesionales en Barcelona ✓ Emergencias 24/7 ✓ Calderas ✓ Piscinas ✓ Reparación e instalación. Servicio en Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages y Maresme. Llama al 677 133 242."
   },
   "home": {
-    "headline": "Fontanería Profesional y Mantenimiento de Piscinas en Terrassa",
-    "sub": "Emergencias 24/7 · Servicio Rápido · Presupuesto Sin Compromiso · Trabajo Garantizado",
+    "headline": "Fontanería Profesional · Emergencias 24h · Calderas y Piscinas",
+    "sub": "Servicio en Barcelonès · Vallès Occidental · Vallès Oriental · Baix Llobregat · Bages · Maresme",
     "cta_call": "Llamar Ahora",
     "cta_quote": "Presupuesto Gratis",
     "benefits": {
@@ -13,13 +13,13 @@
       "response": "Emergencias 24/7",
       "pricing": "Presupuesto Sin Compromiso",
       "quality": "Trabajo Garantizado",
-      "experience": "Especialistas en Terrassa"
+      "experience": "Especialistas en Barcelona"
     }
   },
   "services": {
     "fontaneria": {
-      "title": "Fontanería Profesional 24h",
-      "desc": "Servicio de fontanería integral en Terrassa y comarca. Reparamos e instalamos grifería, bachas, calefones, inodoros, desagües y más. Disponibles 24 horas para emergencias.",
+      "title": "Fontanería de Emergencias 24h",
+      "desc": "Servicio de fontanería profesional en Barcelona y comarca. Atendemos emergencias 24/7. Reparamos e instalamos grifería, bachas, calefones, inodoros, desagües y más. Respuesta inmediata en Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages y Maresme.",
       "features": [
         "Emergencias 24/7 - Respuesta Inmediata",
         "Instalación y Reparación de Grifería (baño y cocina)",
@@ -46,8 +46,8 @@
       ]
     },
     "piscinas": {
-      "title": "Piscinas - Instalación, Reparación y Mantenimiento",
-      "desc": "Especialistas en mantenimiento y reparación de piscinas. Actualizamos equipos de filtrado, reparamos cañerías, arreglamos skimmers y dejamos su piscina lista para disfrutar.",
+      "title": "Mantenimiento y Reparación de Piscinas",
+      "desc": "Especialistas en mantenimiento y reparación de piscinas en Barcelona y comarca. Actualizamos equipos de filtrado, reparamos cañerías, arreglamos skimmers y dejamos su piscina lista para disfrutar. Servicio en Barcelonès, Vallès, Baix Llobregat, Bages y Maresme.",
       "features": [
         "Reparación de Equipos de Filtrado",
         "Instalación y Actualización de Filtros Nuevos",
@@ -57,6 +57,20 @@
         "Mantenimiento Preventivo y Correctivo",
         "Servicio para Piscinas Cubiertas y al Aire Libre",
         "Presupuesto Sin Compromiso"
+      ]
+    },
+    "calderas": {
+      "title": "Instalación y Mantenimiento de Calderas",
+      "desc": "Especialistas en instalación, reparación y mantenimiento de calderas en Barcelona y comarca. Garantizamos el correcto funcionamiento de tu sistema de calefacción. Servicio de urgencias 24h disponible en todas las comarcas.",
+      "features": [
+        "Instalación de Calderas Nuevas",
+        "Reparación de Calderas de Gas y Eléctricas",
+        "Mantenimiento Preventivo Anual",
+        "Revisión y Limpieza de Calderas",
+        "Detección y Reparación de Fugas",
+        "Optimización de Consumo Energético",
+        "Certificados y Boletines Obligatorios",
+        "Servicio de Urgencias 24/7"
       ]
     }
   },

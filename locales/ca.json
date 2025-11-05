@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Fontaneria Terrassa | Urgències 24h | Servei Ràpid al Vallès",
-    "description": "✓ Fontaners professionals a Terrassa i comarca ✓ Urgències 24/7 ✓ Reparació i instal·lació ✓ Manteniment de piscines. Servei al Vallès Occidental, Barcelona i comarca. Truca al 677 133 242."
+    "title": "Fontaneria Barcelona | Urgències 24h | Calderes i Piscines",
+    "description": "✓ Fontaners professionals a Barcelona ✓ Urgències 24/7 ✓ Calderes ✓ Piscines ✓ Reparació i instal·lació. Servei al Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages i Maresme. Truca al 677 133 242."
   },
   "home": {
-    "headline": "Fontaneria Professional i Manteniment de Piscines a Terrassa",
-    "sub": "Urgències 24/7 · Servei Ràpid · Pressupost Sense Compromís · Treball Garantit",
+    "headline": "Fontaneria Professional · Urgències 24h · Calderes i Piscines",
+    "sub": "Servei al Barcelonès · Vallès Occidental · Vallès Oriental · Baix Llobregat · Bages · Maresme",
     "cta_call": "Trucar Ara",
     "cta_quote": "Pressupost Gratis",
     "benefits": {
@@ -13,13 +13,13 @@
       "response": "Urgències 24/7",
       "pricing": "Pressupost Sense Compromís",
       "quality": "Treball Garantit",
-      "experience": "Especialistes a Terrassa"
+      "experience": "Especialistes a Barcelona"
     }
   },
   "services": {
     "fontaneria": {
-      "title": "Fontaneria Professional 24h",
-      "desc": "Servei de fontaneria integral a Terrassa i comarca. Reparem i instal·lem aixetes, piques, escalfadors, vàters, desguassos i més. Disponibles 24 hores per urgències.",
+      "title": "Fontaneria d'Urgències 24h",
+      "desc": "Servei de fontaneria professional a Barcelona i comarca. Atenem urgències 24/7. Reparem i instal·lem aixetes, piques, escalfadors, vàters, desguassos i més. Resposta immediata al Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages i Maresme.",
       "features": [
         "Urgències 24/7 - Resposta Immediata",
         "Instal·lació i Reparació d'Aixetes (bany i cuina)",
@@ -46,8 +46,8 @@
       ]
     },
     "piscinas": {
-      "title": "Piscines - Instal·lació, Reparació i Manteniment",
-      "desc": "Especialistes en manteniment i reparació de piscines. Actualitzem equips de filtrat, reparem canonades, arreglem skimmers i deixem la seva piscina llesta per gaudir.",
+      "title": "Manteniment i Reparació de Piscines",
+      "desc": "Especialistes en manteniment i reparació de piscines a Barcelona i comarca. Actualitzem equips de filtrat, reparem canonades, arreglem skimmers i deixem la seva piscina llesta per gaudir. Servei al Barcelonès, Vallès, Baix Llobregat, Bages i Maresme.",
       "features": [
         "Reparació d'Equips de Filtrat",
         "Instal·lació i Actualització de Filtres Nous",
@@ -57,6 +57,20 @@
         "Manteniment Preventiu i Correctiu",
         "Servei per Piscines Cobertes i a l'Aire Lliure",
         "Pressupost Sense Compromís"
+      ]
+    },
+    "calderas": {
+      "title": "Instal·lació i Manteniment de Calderes",
+      "desc": "Especialistes en instal·lació, reparació i manteniment de calderes a Barcelona i comarca. Garantim el correcte funcionament del teu sistema de calefacció. Servei d'urgències 24h disponible a totes les comarques.",
+      "features": [
+        "Instal·lació de Calderes Noves",
+        "Reparació de Calderes de Gas i Elèctriques",
+        "Manteniment Preventiu Anual",
+        "Revisió i Neteja de Calderes",
+        "Detecció i Reparació de Fugues",
+        "Optimització de Consum Energètic",
+        "Certificats i Butlletins Obligatoris",
+        "Servei d'Urgències 24/7"
       ]
     }
   },

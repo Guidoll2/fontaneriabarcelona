@@ -74,8 +74,8 @@ export default function ServicePageLayout({
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.4 }}
             >
               <h2 className="text-center mb-12">
                 {locale === 'en' ? 'What We Offer' : 'Qué Ofrecemos'}
@@ -87,8 +87,8 @@ export default function ServicePageLayout({
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="flex items-start gap-4 p-6 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors"
                   >
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-500 text-white flex items-center justify-center">
@@ -199,19 +199,19 @@ export default function ServicePageLayout({
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-primary text-white">
+      <section className="section-padding bg-gradient-to-br from-secondary-50 via-white to-secondary-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-secondary-100"
           >
-            <h2 className="mb-6">
+            <h2 className="mb-6 text-secondary-900">
               {locale === 'en' ? 'Need This Service?' : '¿Necesitas Este Servicio?'}
             </h2>
-            <p className="text-xl mb-8 text-primary-100">
+            <p className="text-xl mb-8 text-secondary-600">
               {locale === 'en' 
                 ? 'Get in touch for a free, no-obligation quote. Available 24/7 for emergencies.' 
                 : 'Contáctanos para un presupuesto gratuito sin compromiso. Disponibles 24/7 para urgencias.'}
@@ -219,7 +219,7 @@ export default function ServicePageLayout({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="tel:+34677133242"
-                className="btn-accent btn-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 text-white font-semibold hover:from-orange-700 hover:to-orange-600 active:from-orange-800 active:to-orange-700 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -228,7 +228,7 @@ export default function ServicePageLayout({
               </a>
               <Link 
                 href={`/${locale}/contacto`}
-                className="btn-secondary btn-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg rounded-lg bg-secondary-900 text-white font-semibold hover:bg-secondary-800 active:bg-secondary-950 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-700 focus:ring-offset-2"
               >
                 {locale === 'en' ? 'Request Quote' : 'Pedir Presupuesto'}
               </Link>

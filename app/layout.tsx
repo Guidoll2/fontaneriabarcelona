@@ -6,14 +6,14 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
-    template: "%s | Fontanería Terrassa",
-    default: "Fontanería Terrassa - Servicios 24h | Piscinas",
+    template: "%s | Fontanería Barcelona",
+    default: "Fontanería Barcelona - Emergencias 24h | Calderas | Piscinas",
   },
-  description: "Fontanería profesional en Terrassa y comarca. Servicios de fontanería y mantenimiento de piscinas. Urgencias 24h en Vallès Occidental, Barcelona y comarca.",
-  applicationName: "Fontanería Terrassa",
-  authors: [{ name: "Fontanería Terrassa" }],
+  description: "Fontanería profesional en Barcelona y comarca. Emergencias 24h, instalación y mantenimiento de calderas, servicios de piscinas. Atención en Barcelonès, Vallès Oriental, Vallès Occidental, Baix Llobregat, Bages y Maresme.",
+  applicationName: "Fontanería Barcelona",
+  authors: [{ name: "Fontanería Barcelona" }],
   generator: "Next.js",
-  keywords: ["fontanería", "fontanero terrassa", "piscinas", "mantenimiento piscinas", "vallès occidental", "barcelona", "24h", "urgencias", "sabadell", "rubí", "calefones", "grifería"],
+  keywords: ["fontanería barcelona", "fontanero barcelona", "emergencias 24h", "calderas barcelona", "piscinas barcelona", "barcelonès", "vallès occidental", "vallès oriental", "baix llobregat", "bages", "maresme", "fontanero urgente", "reparación calderas", "mantenimiento piscinas"],
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,

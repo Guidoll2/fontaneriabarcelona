@@ -1,5 +1,18 @@
 import { getDict } from "../../../../lib/i18n";
 import ServicePageLayout from "../../../../components/ServicePageLayout";
+import { generateMetadata as genMeta } from "../../../../lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  
+  return genMeta({
+    title: dict.services.fontaneria.title,
+    description: dict.services.fontaneria.desc,
+    path: '/servicios/fontaneria',
+    locale
+  });
+}
 
 export default async function Plumbing({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;

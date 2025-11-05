@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const LOCALES = ["es", "en", "ca"];
-const PAGES = ["", "servicios/fontaneria", "servicios/piscinas", "contacto"];
+const PAGES = ["", "servicios/fontaneria", "servicios/piscinas", "servicios/calderas", "contacto"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return LOCALES.flatMap((locale) =>
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/${locale}${page ? `/${page}` : ""}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: page === "" ? 1.0 : page.includes("servicios") ? 0.9 : 0.8,
     }))
   );
 }

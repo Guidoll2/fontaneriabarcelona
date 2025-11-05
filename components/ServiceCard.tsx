@@ -36,6 +36,13 @@ export default function ServiceCard({ title, description, img, href, icon, local
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
         
+        {/* Badge "Trabajos Realizados" */}
+        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg">
+          <span className="text-xs font-semibold text-secondary-800">
+            {locale === 'en' ? 'Our Work' : locale === 'ca' ? 'Treballs Realitzats' : 'Trabajos Realizados'}
+          </span>
+        </div>
+        
         {/* Icon Badge */}
         {icon && (
           <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg">

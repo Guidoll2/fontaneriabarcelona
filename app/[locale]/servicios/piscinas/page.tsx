@@ -1,5 +1,18 @@
 import { getDict } from "../../../../lib/i18n";
 import ServicePageLayout from "../../../../components/ServicePageLayout";
+import { generateMetadata as genMeta } from "../../../../lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  
+  return genMeta({
+    title: dict.services.piscinas.title,
+    description: dict.services.piscinas.desc,
+    path: '/servicios/piscinas',
+    locale
+  });
+}
 
 export default async function Pools({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;
@@ -25,7 +38,7 @@ export default async function Pools({ params }: { params: Promise<{ locale: stri
     <ServicePageLayout
       title={dict.services.piscinas.title}
       description={dict.services.piscinas.desc}
-      image="/Fontanero-piscina.jpeg"
+      image="/filtroencobertizo.jpeg"
       features={dict.services.piscinas.features}
       locale={locale}
       galleryImages={galleryaImages}

@@ -1,12 +1,12 @@
 "use client";
-import { use } from "react";
+import { use, useState, useEffect } from "react";
 import { getDict } from "../../lib/i18n";
 import ServiceCard from "../../components/ServiceCard";
 import TestimonialCard from "../../components/TestimonialCard";
 import BudgetForm from "../../components/BudgetForm";
 import Image from "next/image";
 import { localBusinessJsonLd } from "../../lib/seo";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { trackPhoneCall } from "../../components/GoogleAnalytics";
 import HeroImageCarousel from "../../components/HeroImageCarousel";
 import ZoneCard from "../../components/ZoneCard";
@@ -16,6 +16,23 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
   const { locale: localeParam } = use(params);
   const locale = localeParam || "es";
   const dict = getDict(locale as string);
+
+  // Hero image carousel
+  const heroImages = [
+    { src: "/piscinalista.jpeg", alt: locale === 'en' ? 'Professional pool services' : 'Servicios profesionales de piscinas' },
+    { src: "/camionetaplot2.png", alt: locale === 'en' ? 'Boiler installation and repair' : 'Instalación y reparación de calderas' },
+    { src: "/caldera.png", alt: locale === 'en' ? 'Professional plumbing services' : 'Servicios profesionales de fontanería' }
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   // Service icons
   const serviceIcons = {
@@ -27,6 +44,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
     piscinas: (
       <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      </svg>
+    ),
+    calderas: (
+      <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
       </svg>
     ),
   };
@@ -73,15 +96,24 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                 {dict.home.headline}
               </motion.h1>
 
-              {/* Subheadline */}
-              <motion.p 
+              {/* Subheadline - Click to Zones */}
+              <motion.a 
+                href="#coverage"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-cyan-900 leading-relaxed max-w-xl drop-shadow-sm"
+                className="text-xl text-cyan-900 leading-relaxed max-w-xl drop-shadow-sm inline-flex items-center gap-2 group cursor-pointer hover:text-sky-600 transition-colors duration-300"
               >
-                {dict.home.sub}
-              </motion.p>
+                <span>{dict.home.sub}</span>
+                <svg 
+                  className="w-6 h-6 text-sky-500 group-hover:translate-x-1 group-hover:text-sky-600 transition-all duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.a>
 
               {/* Benefits List with enhanced styling */}
               <motion.div
@@ -141,14 +173,41 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               className="relative hidden lg:flex flex-col gap-6"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-sky-200/50 h-[400px]">
-                <Image 
-                  src="/piscinalista.jpeg" 
-                  alt={locale === 'en' ? 'Professional pool services' : 'Servicios profesionales de piscinas'} 
-                  fill
-                  className="object-cover"
-                  priority
-                  unoptimized
-                />
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.7 }}
+                    className="relative w-full h-full"
+                  >
+                    <Image 
+                      src={heroImages[currentImageIndex].src}
+                      alt={heroImages[currentImageIndex].alt}
+                      fill
+                      className="object-cover"
+                      priority={currentImageIndex === 0}
+                      unoptimized
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Image indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                  {heroImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex 
+                          ? 'bg-white w-8' 
+                          : 'bg-white/50 hover:bg-white/75'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
               
               {/* Stats Card Below Image */}
@@ -184,12 +243,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <h2 className="mb-4">{locale === 'en' ? 'Our Services' : 'Nuestros Servicios'}</h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               {locale === 'en' 
-                ? 'Professional solutions for all your plumbing and pool needs' 
-                : 'Soluciones profesionales para todas tus necesidades de fontanería y piscinas'}
+                ? 'Professional solutions for all your plumbing, pool and boiler needs' 
+                : 'Soluciones profesionales para todas tus necesidades de fontanería, piscinas y calderas'}
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <ServiceCard 
               title={dict.services.fontaneria.title} 
               description={dict.services.fontaneria.desc} 
@@ -206,21 +265,29 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               icon={serviceIcons.piscinas}
               locale={locale}
             />
+            <ServiceCard 
+              title={dict.services.calderas.title} 
+              description={dict.services.calderas.desc} 
+              img="/caldera.png" 
+              href={`/${locale}/servicios/calderas`}
+              icon={serviceIcons.calderas}
+              locale={locale}
+            />
           </div>
         </div>
       </section>
 
       {/* Coverage Area Section */}
-      <section className="section-padding bg-white">
+      <section id="coverage" className="section-padding bg-white scroll-mt-20">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="mb-4">{locale === 'en' ? 'Service Areas' : locale === 'ca' ? 'Zones de Servei' : 'Zonas de Servicio'}</h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               {locale === 'en' 
-                ? 'We provide plumbing and pool services throughout Terrassa and the greater Barcelona region' 
+                ? 'Professional plumbing, boiler and pool services in Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages and Maresme' 
                 : locale === 'ca'
-                ? 'Oferim serveis de fontaneria i piscines a Terrassa i la región de Barcelona'
-                : 'Ofrecemos servicios de fontanería y piscinas en Terrassa y la comarca de Barcelona'}
+                ? 'Serveis professionals de fontaneria, calderes i piscines al Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages i Maresme'
+                : 'Servicios profesionales de fontanería, calderas y piscinas en Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages y Maresme'}
             </p>
           </div>
 
@@ -272,35 +339,75 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <h2 className="mb-4">{locale === 'en' ? 'What Our Clients Say' : 'Lo Que Dicen Nuestros Clientes'}</h2>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               {locale === 'en' 
-                ? 'Real feedback from satisfied customers' 
-                : 'Opiniones reales de clientes satisfechos'}
+                ? 'Real reviews from satisfied customers on Google Maps' 
+                : 'Reseñas reales de clientes satisfechos en Google Maps'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
             <TestimonialCard 
-              author="María García, Badalona" 
+              author="PedroJSkywalker" 
               text={locale === 'en' 
-                ? "Fast and professional service. They fixed my leak the same morning!" 
-                : "Servicio rápido y profesional. ¡Solucionaron mi fuga la misma mañana!"}
-              rating={5}
-              image="/Fontanero-maletin.jpeg"
-            />
-            <TestimonialCard 
-              author="Jordi Martínez, Barcelona" 
-              text={locale === 'en' 
-                ? "Great price and clean work. Highly recommended!" 
-                : "Buen precio y trabajo limpio. ¡Muy recomendables!"}
+                ? "Adam is an excellent plumber, with a lot of experience and very professional in his treatment, as well as friendly and honest. He quickly solved my bathroom installations and for a fair price, not a single problem once he left everything finished. With people like him it is a pleasure to deal with." 
+                : locale === 'ca'
+                ? "L'Adam és un lampista excel·lent, amb molta experiència i molt correcte en el tracte a més d'agradable i sincer, ràpidament va solucionar les meves instal·lacions del bany i per un preu acord amb el treball, ni un sol problema un cop va deixar tot acabat. Amb persones com ell és un plaer tractar."
+                : "Adam es un fontanero excelente, con mucha experiencia y muy correcto en el trato además de simpático y sincero, rápidamente solucionó mis instalaciones del cuarto de baño y por un precio acorde al trabajo, ni un solo problema una vez dejo todo terminado. Con personas como él es un placer tratar."}
               rating={5}
             />
             <TestimonialCard 
-              author="Carmen López, Sant Cugat" 
+              author="Marçal B." 
               text={locale === 'en' 
-                ? "Excellent pool maintenance service. Very professional and reliable." 
-                : "Excelente servicio de mantenimiento de piscina. Muy profesionales y confiables."}
+                ? "100% recommended. He has been solving my plumbing problems for years (pipe leaks, electric water heater replacement, pool problems, etc.) and always in a very efficient and professional manner. He demonstrates great experience in every job he does, he's not expensive and you can count on him quickly. I wish there were more tradesmen like him!" 
+                : locale === 'ca'
+                ? "Recomanable al 100%. M'ha estat solucionant problemes de lampisteria durant anys (punxades a canonades, substitució de termo elèctric, problemes amb la piscina, etc) i sempre d'una manera molt resolutiva i professional. Demostra gran experiència en cada actuació que realitza, no és car i a més es pot quedar amb ell amb rapidesa. Ojalà més industrials així!"
+                : "Recomendable al 100%. Me ha estado solucionando problemas de fontanería durante años (pinchazos en tuberías, sustitución de termo eléctrico, problemas con la piscina, etc) y siempre de una manera muy resolutiva y profesional. Demuestra gran experiencia en cada actuación que realiza, no es caro y además se puede quedar con él con rapidez. Ojalá más industriales así!"}
               rating={5}
             />
           </div>
+
+          {/* Google Maps Review Button */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <a 
+              href="https://share.google/Loj7ZpCRfaGazpoYz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-primary-300 rounded-xl hover:bg-primary-50 hover:border-primary-500 transition-all duration-300 shadow-lg hover:shadow-xl group"
+            >
+              <svg className="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                <path d="M12 6c-3.308 0-6 2.692-6 6s2.692 6 6 6 6-2.692 6-6-2.692-6-6-6zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+              <div className="text-left">
+                <div className="font-bold text-secondary-900 group-hover:text-primary-700 transition-colors">
+                  {locale === 'en' 
+                    ? 'See All Reviews on Google Maps' 
+                    : locale === 'ca'
+                    ? 'Veure Totes les Ressenyes a Google Maps'
+                    : 'Ver Todas las Reseñas en Google Maps'}
+                </div>
+                <div className="flex items-center gap-1 text-sm text-secondary-600">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="font-semibold text-secondary-900">5.0</span>
+                </div>
+              </div>
+              <svg className="w-5 h-5 text-primary-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -317,12 +424,11 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image 
-                src="/maletin.jpeg"
+                src="/adamback.png"
                 alt={locale === 'en' ? 'Our professional team' : 'Nuestro equipo profesional'}
                 fill
                 className="object-cover"
-                unoptimized
-              />
+                            />
             </motion.div>
 
             {/* Content */}

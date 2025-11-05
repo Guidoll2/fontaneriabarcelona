@@ -1,6 +1,18 @@
 import { getDict } from "../../../lib/i18n";
 import BudgetForm from "../../../components/BudgetForm";
-import { localBusinessJsonLd } from "../../../lib/seo";
+import { localBusinessJsonLd, generateMetadata as genMeta } from "../../../lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const dict = getDict(locale);
+  
+  return genMeta({
+    title: dict.contact.title,
+    description: dict.contact.intro,
+    path: '/contacto',
+    locale
+  });
+}
 
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;

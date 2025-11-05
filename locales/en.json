@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Plumbing Terrassa | 24h Emergency | Fast Service in Vallès",
-    "description": "✓ Professional plumbers in Terrassa and region ✓ 24/7 emergencies ✓ Repair and installation ✓ Pool maintenance. Service in Vallès Occidental, Barcelona and region. Call 677 133 242."
+    "title": "Plumbing Barcelona | 24h Emergency | Boilers & Pools",
+    "description": "✓ Professional plumbers in Barcelona ✓ 24/7 emergencies ✓ Boilers ✓ Pools ✓ Repair and installation. Service in Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages and Maresme. Call 677 133 242."
   },
   "home": {
-    "headline": "Professional Plumbing and Pool Maintenance in Terrassa",
-    "sub": "24/7 Emergencies · Fast Service · No-Obligation Quote · Guaranteed Work",
+    "headline": "Professional Plumbing · 24h Emergency · Boilers & Pools",
+    "sub": "Service in Barcelonès · Vallès Occidental · Vallès Oriental · Baix Llobregat · Bages · Maresme",
     "cta_call": "Call Now",
     "cta_quote": "Free Quote",
     "benefits": {
@@ -13,13 +13,13 @@
       "response": "24/7 Emergencies",
       "pricing": "No-Obligation Quote",
       "quality": "Guaranteed Work",
-      "experience": "Terrassa Specialists"
+      "experience": "Barcelona Specialists"
     }
   },
   "services": {
     "fontaneria": {
-      "title": "Professional Plumbing 24h",
-      "desc": "Comprehensive plumbing service in Terrassa and region. We repair and install faucets, sinks, water heaters, toilets, drains and more. Available 24 hours for emergencies.",
+      "title": "24h Emergency Plumbing",
+      "desc": "Professional plumbing service in Barcelona and region. We handle 24/7 emergencies. We repair and install faucets, sinks, water heaters, toilets, drains and more. Immediate response in Barcelonès, Vallès Occidental, Vallès Oriental, Baix Llobregat, Bages and Maresme.",
       "features": [
         "24/7 Emergencies - Immediate Response",
         "Faucet Installation and Repair (bathroom and kitchen)",
@@ -46,8 +46,8 @@
       ]
     },
     "piscinas": {
-      "title": "Pools - Installation, Repair and Maintenance",
-      "desc": "Specialists in pool maintenance and repair. We upgrade filtration equipment, repair pipes, fix skimmers and get your pool ready to enjoy.",
+      "title": "Pool Maintenance and Repair",
+      "desc": "Specialists in pool maintenance and repair in Barcelona and region. We upgrade filtration equipment, repair pipes, fix skimmers and get your pool ready to enjoy. Service in Barcelonès, Vallès, Baix Llobregat, Bages and Maresme.",
       "features": [
         "Filter Equipment Repair",
         "New Filter Installation and Upgrade",
@@ -57,6 +57,20 @@
         "Preventive and Corrective Maintenance",
         "Service for Indoor and Outdoor Pools",
         "No-Obligation Quote"
+      ]
+    },
+    "calderas": {
+      "title": "Boiler Installation and Maintenance",
+      "desc": "Specialists in boiler installation, repair and maintenance in Barcelona and region. We guarantee the proper functioning of your heating system. 24h emergency service available in all regions.",
+      "features": [
+        "New Boiler Installation",
+        "Gas and Electric Boiler Repair",
+        "Annual Preventive Maintenance",
+        "Boiler Inspection and Cleaning",
+        "Leak Detection and Repair",
+        "Energy Consumption Optimization",
+        "Required Certificates and Reports",
+        "24/7 Emergency Service"
       ]
     }
   },

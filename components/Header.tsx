@@ -66,9 +66,9 @@ export default function Header({ locale }: { locale?: string }) {
   ];
 
   const getMenuLabel = (locale: string) => {
-    if (locale === 'en') return { fontaneria: 'Plumbing', piscinas: 'Pools' };
-    if (locale === 'ca') return { fontaneria: 'Fontaneria', piscinas: 'Piscines' };
-    return { fontaneria: 'Fontanería', piscinas: 'Piscinas' };
+    if (locale === 'en') return { fontaneria: 'Plumbing', piscinas: 'Pools', calderas: 'Boilers' };
+    if (locale === 'ca') return { fontaneria: 'Fontaneria', piscinas: 'Piscines', calderas: 'Calderes' };
+    return { fontaneria: 'Fontanería', piscinas: 'Piscinas', calderas: 'Calderas' };
   };
 
   const labels = getMenuLabel(currentLocale);
@@ -76,6 +76,7 @@ export default function Header({ locale }: { locale?: string }) {
   const menuItems = [
     { href: `/servicios/fontaneria`, label: labels.fontaneria },
     { href: `/servicios/piscinas`, label: labels.piscinas },
+    { href: `/servicios/calderas`, label: labels.calderas },
   ];
 
   return (
