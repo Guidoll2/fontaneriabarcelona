@@ -30,13 +30,13 @@ async function sendEmailNotification(data: Req) {
   });
 
   const sentFrom = new Sender(
-    process.env.MAILERSEND_FROM_EMAIL || "",
-    "Fontanería Low Cost - Formulario Web"
+    "info@fontaneriaipiscinas.com",
+    "Fontanería Low Cost"
   );
 
   const recipients = [
     new Recipient(
-      process.env.MAILERSEND_TO_EMAIL || "",
+      process.env.MAILERSEND_TO_EMAIL || "guido.llaurado@gmail.com",
       "Propietario"
     )
   ];
