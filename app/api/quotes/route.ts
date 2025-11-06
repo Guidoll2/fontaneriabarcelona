@@ -36,7 +36,7 @@ async function sendEmailNotification(data: Req) {
 
   const recipients = [
     new Recipient(
-      process.env.MAILERSEND_TO_EMAIL || "guido.llaurado@gmail.com",
+      process.env.MAILERSEND_TO_EMAIL || "fontanerialowcost24@gmail.com",
       "Propietario"
     )
   ];
