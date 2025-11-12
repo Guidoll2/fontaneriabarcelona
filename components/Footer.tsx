@@ -100,7 +100,7 @@ export default function Footer({ locale = "es" }: { locale?: string }) {
                   href="mailto:fontanerialowcost24@gmail.com" 
                   className="text-secondary-300 hover:text-primary-400 transition-colors break-all"
                 >
-                  fontaneriabarcelona@gmail.com
+                  fontanerialowcost24@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

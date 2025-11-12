@@ -2,6 +2,7 @@ import "../../app/globals.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import EmergencyButton from "../../components/EmergencyButton";
+import { CartProvider } from "../../lib/cart-context";
 
 export const dynamic = "force-static";
 
@@ -9,13 +10,13 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const { locale: localeParam } = await params;
   const locale = localeParam || "es";
   return (
-    <>
+    <CartProvider>
       <Header locale={locale} />
       <main className="min-h-[60vh]">
         {children}
       </main>
       <Footer locale={locale} />
       <EmergencyButton locale={locale} />
-    </>
+    </CartProvider>
   );
 }
