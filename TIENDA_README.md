@@ -11,14 +11,17 @@
    - Botones de "Agregar al Carrito" y "Comprar Ahora"
    - Badges de instalación incluida
    - Sección de confianza con garantías
+   - **NUEVO:** Sección "Dudas/Consultas" con botones de contacto (WhatsApp, Teléfono, Email)
 
 2. **`/[locale]/checkout`** - Página de checkout
    - Resumen del pedido
    - Lista de productos en el carrito
    - Controles de cantidad (+/-)
    - Formulario de dirección de envío
+   - **NUEVO:** Selector de método de pago preferido (Transferencia, Efectivo, Tarjeta)
    - Cálculo de totales
    - Página de confirmación de pedido
+   - **NUEVO:** Envío automático de emails de confirmación
 
 ### 🎨 Componentes Nuevos
 
@@ -42,9 +45,18 @@
    - Persistencia en localStorage
    - Cálculo de totales automático
 
+4. **`app/api/orders/route.ts`** - API para procesar pedidos
+   - **NUEVO:** Integración con MailerSend
+   - Envío de emails de confirmación al cliente
+   - Envío de emails de notificación al propietario
+   - Rate limiting (3 pedidos por minuto)
+   - Validación de datos
+   - Generación de número de orden único
+
 ### 🎯 Header Actualizado
 
-- Se agregó el link "Tienda" junto a "Calderas"
+- ~~Se agregó el link "Tienda" junto a "Calderas"~~ **REMOVIDO** (oculto del menú público)
+- La tienda es accesible solo mediante URL directa: `/[locale]/tienda`
 - Multiidioma (Español, Inglés, Catalán)
 
 ### 🌐 Multiidioma
@@ -94,55 +106,119 @@ El carrito utiliza:
 - **localStorage** para persistencia entre sesiones
 - Actualización automática del contador en el icono
 
+## 📧 Sistema de Emails (MailerSend)
+
+### Emails Automáticos
+
+Cuando un cliente realiza un pedido, se envían automáticamente:
+
+1. **Email al Cliente** ✉️
+   - Confirmación del pedido
+   - Número de orden único
+   - Detalles completos de productos
+   - Información de contacto y dirección
+   - Método de pago seleccionado
+   - Total del pedido
+
+2. **Email al Propietario** 🔔
+   - Notificación de nuevo pedido
+   - Alerta de acción requerida
+   - Todos los datos del cliente
+   - Listado de productos
+   - Método de pago preferido
+   - Total del pedido
+
+### Configuración Requerida
+
+Ver archivo `MAILERSEND_SETUP.md` para instrucciones completas.
+
+Variables de entorno necesarias:
+```env
+MAILERSEND_API_KEY=tu_api_key
+MAILERSEND_TO_EMAIL=fontanerialowcost24@gmail.com
+```
+
+### Métodos de Pago Disponibles
+
+El cliente puede seleccionar su método de pago preferido:
+- 💳 **Transferencia Bancaria**
+- 💵 **Efectivo**
+- 💳 **Tarjeta de Crédito/Débito**
+
+> **Nota:** Los pagos NO se procesan online. El método seleccionado es solo una preferencia que ayuda al propietario a coordinar con el cliente.
+
 ## 🚀 Próximos Pasos (Backend)
 
-Para conectar con un backend real, necesitarás:
+### Opción 1: Sistema Actual (Recomendado para empezar)
 
-1. **API de Productos**
-   ```typescript
-   GET /api/products
-   GET /api/products/:id
-   ```
+**✅ Ya implementado:** La tienda funciona como catálogo con sistema de pedidos por email.
 
-2. **API de Pedidos**
-   ```typescript
-   POST /api/orders
-   {
-     items: CartItem[],
-     customer: FormData,
-     totalPrice: number
-   }
-   ```
+**Flujo:**
+1. Cliente hace pedido online
+2. Cliente y propietario reciben emails automáticos
+3. Propietario contacta al cliente para:
+   - Confirmar disponibilidad
+   - Coordinar instalación
+   - Acordar pago final
+   - Cerrar el trato
 
-3. **Base de Datos**
-   - Tabla de productos (id, name, price, image, description, installationIncluded)
-   - Tabla de pedidos (id, customerId, items, status, createdAt)
+**Ventajas:**
+- ✅ Sin costos de procesamiento de pagos
+- ✅ Control total sobre cada venta
+- ✅ Flexibilidad en precios y condiciones
+- ✅ No requiere integración con pasarelas de pago
+
+### Opción 2: Integración de Pagos Online (Futuro)
+
+Para conectar con procesamiento de pagos real, necesitarás:
+
+1. **Pasarela de Pagos**
+   - Stripe
+   - PayPal
+   - Redsys (España)
+
+2. **Base de Datos**
+   - Tabla de productos (id, name, price, image, description, stock)
+   - Tabla de pedidos (id, customerId, items, status, paymentId)
    - Tabla de clientes (id, name, email, phone, address)
 
-4. **Procesamiento de Pagos**
-   - Integración con Stripe, PayPal, o similar
+3. **Backend Adicional**
+   ```typescript
+   POST /api/payments/create-intent
+   POST /api/payments/confirm
+   GET  /api/orders/:orderId
+   ```
 
-5. **Notificaciones**
-   - Email de confirmación al cliente
-   - Email de notificación al administrador
+4. **Notificaciones Extendidas**
+   - Confirmación de pago
+   - Actualización de estado
+   - Recordatorios de instalación
 
 ## 📱 Cómo Usar
 
-1. **Navegar a la tienda**: Click en "Tienda" en el header
+1. **Acceder a la tienda**: Ve directamente a `/es/tienda` (no aparece en el menú)
 2. **Ver productos**: Scroll por la galería
 3. **Agregar al carrito**: Click en "Agregar al Carrito"
 4. **Ver carrito**: Click en el icono del carrito (esquina superior derecha)
-5. **Checkout**: Completar formulario y "Finalizar Compra"
+5. **Checkout**: Completar formulario con:
+   - Datos personales (nombre, email, teléfono)
+   - Dirección de instalación
+   - Método de pago preferido
+   - Notas adicionales (opcional)
+6. **Finalizar**: Click en "Finalizar Compra"
+7. **Confirmación**: Recibirás un email con los detalles del pedido
 
 ## 🔒 Validación del Formulario
 
 Campos requeridos en checkout:
-- Nombre completo
-- Email
-- Teléfono
-- Dirección
-- Ciudad
-- Código Postal
+- ✅ Nombre completo
+- ✅ Email
+- ✅ Teléfono
+- ✅ Dirección
+- ✅ Ciudad
+- ✅ Código Postal
+- ✅ Método de Pago
+- ⚪ Notas (opcional)
 
 ## ✨ Características Destacadas
 
@@ -150,10 +226,14 @@ Campos requeridos en checkout:
 - ✅ Efecto glass en todas las cards
 - ✅ Animaciones suaves con Framer Motion
 - ✅ Totalmente responsive
-- ✅ Multiidioma completo
+- ✅ Multiidioma completo (ES, EN, CA)
 - ✅ UX optimizada (notificaciones, feedback visual)
 - ✅ Persistencia del carrito
 - ✅ Contador en tiempo real
+- ✅ **Sistema de emails automáticos con MailerSend**
+- ✅ **Selector de método de pago**
+- ✅ **Sección de consultas con contacto directo**
+- ✅ **Oculta del menú público (acceso solo por URL)**
 
 ## 📁 Estructura de Archivos
 
@@ -161,15 +241,18 @@ Campos requeridos en checkout:
 app/
   [locale]/
     tienda/
-      page.tsx          ← Página de la tienda
+      page.tsx          ← Página de la tienda (con sección Dudas/Consultas)
     checkout/
-      page.tsx          ← Página de checkout
+      page.tsx          ← Página de checkout (con selector de pago)
     layout.tsx          ← Layout con CartProvider
+  api/
+    orders/
+      route.ts          ← API para procesar pedidos y enviar emails
 
 components/
   ProductCard.tsx       ← Card de producto
   CartIcon.tsx          ← Icono del carrito
-  Header.tsx            ← Header actualizado
+  Header.tsx            ← Header (sin link a tienda)
 
 lib/
   cart-context.tsx      ← Contexto del carrito
@@ -185,4 +268,32 @@ lib/
 
 ---
 
-**¡Todo listo para empezar a vender calderas!** 🚀
+**¡La tienda está completamente funcional con sistema de emails automáticos!** 🚀
+
+### 📋 Checklist Final
+
+- ✅ Tienda creada con galería de productos
+- ✅ Sistema de carrito funcional
+- ✅ Checkout con formulario completo
+- ✅ Selector de método de pago
+- ✅ Integración con MailerSend
+- ✅ Emails automáticos al cliente y propietario
+- ✅ Sección de consultas en la tienda
+- ✅ Oculta del menú público
+- ✅ Multiidioma completo
+- ✅ Responsive design
+- ✅ Efectos glass profesionales
+
+### 🎯 Para Activar
+
+1. Configura las variables de entorno (ver `MAILERSEND_SETUP.md`)
+2. Comparte la URL con el cliente: `/es/tienda`
+3. ¡Listo para recibir pedidos!
+
+### � Soporte
+
+Cualquier duda, revisa:
+- `TIENDA_README.md` - Documentación general de la tienda
+- `MAILERSEND_SETUP.md` - Configuración de emails
+
+

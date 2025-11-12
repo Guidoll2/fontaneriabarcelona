@@ -16,10 +16,12 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
     address: "",
     city: "",
     postalCode: "",
-    notes: ""
+    notes: "",
+    paymentMethod: "transferencia"
   });
 
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   React.useEffect(() => {
     params.then(p => setLocale(p.locale || "es"));
@@ -44,6 +46,10 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
       city: 'City',
       postalCode: 'Postal Code',
       notes: 'Additional Notes',
+      paymentMethod: 'Payment Method',
+      paymentTransfer: 'Bank Transfer',
+      paymentCash: 'Cash',
+      paymentCard: 'Credit/Debit Card',
       placeOrder: 'Place Order',
       subtotal: 'Subtotal',
       installation: 'Installation',
@@ -70,6 +76,10 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
       city: 'Ciutat',
       postalCode: 'Codi Postal',
       notes: 'Notes Addicionals',
+      paymentMethod: 'Mètode de Pagament',
+      paymentTransfer: 'Transferència Bancària',
+      paymentCash: 'Efectiu',
+      paymentCard: 'Targeta de Crèdit/Dèbit',
       placeOrder: 'Fer Comanda',
       subtotal: 'Subtotal',
       installation: 'Instal·lació',
@@ -96,6 +106,10 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
       city: 'Ciudad',
       postalCode: 'Código Postal',
       notes: 'Notas Adicionales',
+      paymentMethod: 'Método de Pago Preferido',
+      paymentTransfer: 'Transferencia Bancaria',
+      paymentCash: 'Efectivo',
+      paymentCard: 'Tarjeta de Crédito/Débito',
       placeOrder: 'Finalizar Compra',
       subtotal: 'Subtotal',
       installation: 'Instalación',
@@ -108,19 +122,45 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
 
   const content = getContent(locale);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el pedido al backend
-    console.log('Order placed:', { items, formData, totalPrice });
-    setOrderPlaced(true);
-    clearCart();
+    setIsSubmitting(true);
+
+    try {
+      // Enviar datos al endpoint de email
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items,
+          customer: formData,
+          totalPrice,
+          locale
+        }),
+      });
+
+      if (response.ok) {
+        setOrderPlaced(true);
+        clearCart();
+      } else {
+        console.error('Error sending order');
+        alert('Error al procesar el pedido. Por favor, intenta nuevamente.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al procesar el pedido. Por favor, intenta nuevamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (orderPlaced) {
@@ -359,14 +399,44 @@ export default function CheckoutPage({ params }: { params: Promise<{ locale: str
                   className="input-base resize-none"
                 />
 
+                {/* Payment Method */}
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-secondary-900">
+                    {content.paymentMethod}
+                  </label>
+                  <select
+                    name="paymentMethod"
+                    value={formData.paymentMethod}
+                    onChange={handleInputChange}
+                    required
+                    className="input-base"
+                  >
+                    <option value="transferencia">{content.paymentTransfer}</option>
+                    <option value="efectivo">{content.paymentCash}</option>
+                    <option value="tarjeta">{content.paymentCard}</option>
+                  </select>
+                </div>
+
                 <button
                   type="submit"
-                  className="btn-primary w-full flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {content.placeOrder}
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                      </svg>
+                      {locale === 'en' ? 'Processing...' : locale === 'ca' ? 'Processant...' : 'Procesando...'}
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {content.placeOrder}
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>

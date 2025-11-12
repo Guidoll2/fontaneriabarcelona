@@ -1,12 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { trackPhoneCall } from "./GoogleAnalytics";
+import { usePathname } from "next/navigation";
 
 interface EmergencyButtonProps {
   locale: string;
 }
 
 export default function EmergencyButton({ locale }: EmergencyButtonProps) {
+  const pathname = usePathname();
+  
+  // Ocultar el botón en las páginas de tienda y checkout
+  const hideButton = pathname?.includes('/tienda') || pathname?.includes('/checkout');
+  
+  if (hideButton) {
+    return null;
+  }
+
   const buttonText = {
     es: "Emergencia 24h",
     en: "24h Emergency",
