@@ -74,6 +74,31 @@
       ]
     }
   },
+  "valveGuide": {
+    "title": "Guía de Posiciones de Válvulas",
+    "description": "Tabla de referencia detallada para configurar correctamente la válvula selectora del filtro de su piscina para diferentes operaciones.",
+    "metaTitle": "Guía de Posiciones de Válvulas - Piscinas",
+    "metaDescription": "Tabla orientativa para configurar la válvula selectora del filtro de su piscina.",
+    "printLabel": "Imprimir / Guardar como PDF"
+  ,
+    "headers": {
+      "positionOf": "Posición de:",
+      "selectorHeader": "VÁLVULA SELECTORA\n(con motor parado)",
+      "valveWaitingHeader": "VÁLVULA DE ESPERA",
+      "sumidero": "SUMIDERO",
+      "skimmers": "SKIMMERS",
+      "limpiafondos": "LIMPIAFONDOS",
+      "retorno": "RETORNO"
+    },
+    "rows": [
+      { "label": "FILTRACIÓN O DEPURACIÓN", "selector": "FILTRACION" },
+      { "label": "LIMPIEZA DE FONDOS", "selector": "FILTRACION O DESAGÜE" },
+      { "label": "LIMPIEZA DE FILTROS", "selector": "LAVADO" },
+      { "label": "ACLARADO DE FILTRO", "selector": "ENJUAGUE" },
+      { "label": "APERTURA DE PREFILTRO DE BOMBA", "selector": "CERRADA" },
+      { "label": "DESAGÜE POR BOMBEO", "selector": "DESAGÜE" }
+    ]
+  },
   "coverage": {
     "title": "Zonas de Servicio",
     "description": "Ofrecemos nuestros servicios de fontanería y piscinas en las siguientes zonas:",

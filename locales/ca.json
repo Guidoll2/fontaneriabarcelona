@@ -74,6 +74,31 @@
       ]
     }
   },
+  "valveGuide": {
+    "title": "Guia de Posicions de Vàlvules",
+    "description": "Taula de referència detallada per configurar correctament la vàlvula selectora del filtre de la seva piscina per a diferents operacions.",
+    "metaTitle": "Guia de Posicions de Vàlvules - Piscines",
+    "metaDescription": "Taula orientativa per configurar la vàlvula selectora del filtre de la seva piscina.",
+    "printLabel": "Imprimir / Desar com a PDF"
+  ,
+    "headers": {
+      "positionOf": "Posició de:",
+      "selectorHeader": "VÀLVULA SELECTORA\n(amb motor parat)",
+      "valveWaitingHeader": "VÀLVULA D'ESPERA",
+      "sumidero": "SUMIDOR",
+      "skimmers": "SKIMMERS",
+      "limpiafondos": "NETEJA",
+      "retorno": "RETORN"
+    },
+    "rows": [
+      { "label": "FILTRACIÓ O DEPURACIÓ", "selector": "FILTRACIÓ" },
+      { "label": "NETEJA DE FONS", "selector": "FILTRACIÓ O DESGUÀS" },
+      { "label": "NETEJA DE FILTRES", "selector": "RISCAT" },
+      { "label": "ESCLARIT DE FILTRE", "selector": "ENJUAGUE" },
+      { "label": "OBERTURA DE PREFILTRE DE BOMBA", "selector": "TANCAT" },
+      { "label": "DESGUÀS PER BOMBAMENT", "selector": "DESGUÀS" }
+    ]
+  },
   "coverage": {
     "title": "Zones de Servei",
     "description": "Oferim els nostres serveis de fontaneria i piscines a les següents zones:",

@@ -74,6 +74,31 @@
       ]
     }
   },
+  "valveGuide": {
+    "title": "Valve Position Guide",
+    "description": "Detailed reference table to properly configure your pool filter multiport valve for different operations.",
+    "metaTitle": "Valve Position Guide - Pools",
+    "metaDescription": "Reference table to configure your pool filter multiport valve.",
+    "printLabel": "Print / Save as PDF"
+  ,
+    "headers": {
+      "positionOf": "Position of:",
+      "selectorHeader": "MULTIPORT VALVE\n(with motor stopped)",
+      "valveWaitingHeader": "WAITING VALVE",
+      "sumidero": "MAIN DRAIN",
+      "skimmers": "SKIMMERS",
+      "limpiafondos": "VACUUM",
+      "retorno": "RETURN"
+    },
+    "rows": [
+      { "label": "FILTRATION OR PURIFICATION", "selector": "FILTRATION" },
+      { "label": "VACUUM / FLOOR CLEANING", "selector": "FILTER OR DRAIN" },
+      { "label": "FILTER CLEANING", "selector": "BACKWASH" },
+      { "label": "FILTER RINSE", "selector": "RINSE" },
+      { "label": "PUMP PREFILTER OPENING", "selector": "CLOSED" },
+      { "label": "PUMPED DRAIN", "selector": "DRAIN" }
+    ]
+  },
   "coverage": {
     "title": "Service Areas",
     "description": "We offer our plumbing and pool services in the following areas:",
