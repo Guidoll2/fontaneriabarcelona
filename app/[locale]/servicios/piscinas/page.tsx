@@ -1,6 +1,7 @@
 import { getDict } from "../../../../lib/i18n";
 import ServicePageLayout from "../../../../components/ServicePageLayout";
 import { generateMetadata as genMeta } from "../../../../lib/seo";
+import ValveGuideCTA from "../../../../components/ValveGuideCTA";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -35,13 +36,17 @@ export default async function Pools({ params }: { params: Promise<{ locale: stri
   ];
 
   return (
-    <ServicePageLayout
-      title={dict.services.piscinas.title}
-      description={dict.services.piscinas.desc}
-      image="/filtroencobertizo.jpeg"
-      features={dict.services.piscinas.features}
-      locale={locale}
-      galleryImages={galleryaImages}
-    />
+    <>
+      <ServicePageLayout
+        title={dict.services.piscinas.title}
+        description={dict.services.piscinas.desc}
+        image="/filtroencobertizo.jpeg"
+        features={dict.services.piscinas.features}
+        locale={locale}
+        galleryImages={galleryaImages}
+      />
+
+      <ValveGuideCTA locale={locale} />
+    </>
   );
 }

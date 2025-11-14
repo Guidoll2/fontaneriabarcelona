@@ -16,6 +16,7 @@ interface ServicePageLayoutProps {
   features: string[];
   locale: string;
   galleryImages?: GalleryImage[];
+  children?: React.ReactNode;
 }
 
 export default function ServicePageLayout({ 
@@ -24,7 +25,8 @@ export default function ServicePageLayout({
   image, 
   features,
   locale,
-  galleryImages 
+  galleryImages,
+  children 
 }: ServicePageLayoutProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -68,46 +70,48 @@ export default function ServicePageLayout({
 
 
       {/* Features Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.4 }}
-            >
-              <h2 className="text-center mb-12">
-                {locale === 'en' ? 'What We Offer' : 'Qué Ofrecemos'}
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="flex items-start gap-4 p-6 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors"
-                  >
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-500 text-white flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-secondary-900 mb-1">
-                        {feature}
-                      </h3>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+      {features && features.length > 0 && (
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.4 }}
+              >
+                <h2 className="text-center mb-12">
+                  {locale === 'en' ? 'What We Offer' : 'Qué Ofrecemos'}
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="flex items-start gap-4 p-6 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-500 text-white flex items-center justify-center">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-secondary-900 mb-1">
+                          {feature}
+                        </h3>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Gallery Section */}
       {galleryImages && galleryImages.length > 0 && (
@@ -158,6 +162,8 @@ export default function ServicePageLayout({
           </div>
         </section>
       )}
+
+      {children}
 
       {/* Lightbox Modal */}
       <AnimatePresence>
