@@ -149,5 +149,148 @@
     "privacy": "Privacy Policy",
     "legal": "Legal Notice",
     "cookies": "Cookie Policy"
+  },
+  "cloradorSalino": {
+    "meta": {
+      "title": "Salt Chlorinator Installation Barcelona | Fixed Price €1,800",
+      "description": "Professional salt chlorinator installation in Barcelona. Save €400/year on chemicals. 1-day installation. 2-year warranty. Free quote."
+    },
+    "hero": {
+      "badge": "Certified installers in Barcelona",
+      "title1": "Goodbye chlorine.",
+      "title2": "Crystal clear water.",
+      "subtitle": "Salt chlorination system for your pool.",
+      "savings": "Save €400/year",
+      "savingsText": "on chemicals.",
+      "cta": "Request quote",
+      "phone": "677 133 242",
+      "trust": {
+        "warranty": "2 years",
+        "warrantyLabel": "warranty",
+        "install": "1 day",
+        "installLabel": "installation",
+        "count": "+200",
+        "countLabel": "installations"
+      }
+    },
+    "comparison": {
+      "title": "The difference is clear",
+      "subtitle": "Compare traditional maintenance with salt electrolysis technology",
+      "chlorine": {
+        "title": "Traditional chlorine",
+        "subtitle": "Conventional method",
+        "cost": "€400",
+        "maintenance": "Every week",
+        "irritation": "Eyes and skin",
+        "smell": "Strong"
+      },
+      "saltwater": {
+        "title": "Salt chlorinator",
+        "subtitle": "Automatic electrolysis",
+        "recommended": "RECOMMENDED",
+        "cost": "€40",
+        "savings": "90% savings",
+        "maintenance": "Automatic",
+        "irritation": "None",
+        "smell": "No odor"
+      },
+      "labels": {
+        "annualCost": "Annual cost",
+        "maintenance": "Maintenance",
+        "irritation": "Irritation",
+        "smell": "Chlorine smell"
+      },
+      "roi": {
+        "investment": "One-time investment",
+        "annualSavings": "Annual savings",
+        "payback": "Payback period"
+      }
+    },
+    "results": {
+      "badge": "Real projects in Barcelona",
+      "title": "Results speak for themselves",
+      "subtitle": "Real salt chlorinator installations in the metropolitan area",
+      "before": "Before",
+      "beforeDesc": "Green water due to chemical imbalance. Insufficient manual maintenance.",
+      "after": "After",
+      "afterDesc": "Crystal clear water with salt chlorinator. Automatic 24/7 treatment."
+    },
+    "authority": {
+      "title": "Specialists in your area",
+      "subtitle": "Over 10 years installing chlorination systems in the Barcelona metropolitan area",
+      "features": {
+        "certified": {
+          "title": "Certified technicians",
+          "desc": "Official training in salt electrolysis. We work with Zodiac, Astralpool and Hayward."
+        },
+        "experience": {
+          "title": "+200 installations",
+          "desc": "Since 2014 in Vallès, Baix Llobregat and Barcelona. We know every type of pool."
+        },
+        "response": {
+          "title": "Fast response",
+          "desc": "Based in Terrassa. Spare parts in stock. Direct after-sales service."
+        }
+      },
+      "testimonial": {
+        "quote": "I had been buying chlorine every month for years. They installed the chlorinator in Sant Cugat in half a day, configured it and explained everything.",
+        "highlight": "It's been working for two seasons without touching anything.",
+        "author": "Jordi M.",
+        "location": "Sant Cugat del Vallès"
+      }
+    },
+    "pricing": {
+      "badge": "All-inclusive price",
+      "title": "Transparent investment",
+      "subtitle": "No surprises. Fixed price for standard installation.",
+      "price": "1,800",
+      "poolSize": "Pools up to 50m³",
+      "features": {
+        "equipment": { "title": "Chlorinator unit", "desc": "Zodiac or Astralpool" },
+        "installation": { "title": "Complete installation", "desc": "Electrical and hydraulic connection" },
+        "config": { "title": "Configuration", "desc": "Adjusted for your pool" },
+        "salt": { "title": "Salt included", "desc": "First load for startup" },
+        "warranty": { "title": "2-year warranty", "desc": "Covers equipment and installation. Direct technical service." }
+      },
+      "cta": "Request quote",
+      "disclaimer": "Final price based on your installation configuration"
+    },
+    "form": {
+      "badge": "Response within 24h",
+      "title": "Request your quote",
+      "subtitle": "We visit, evaluate your installation and give you an exact price with no obligation"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "We answer your questions about salt chlorination",
+      "questions": [
+        {
+          "q": "Do I really save money?",
+          "a": "Yes. Average chlorine expense: <strong>€400/year</strong>. With salt chlorinator: <strong>€40/year</strong> in salt. You recoup your investment in less than 5 years and then only save."
+        },
+        {
+          "q": "Does it work with my current pool?",
+          "a": "Yes. It adapts to any existing pool: liner, tile, concrete or fiberglass. <strong>No construction required</strong>, just connection to the filtration system."
+        },
+        {
+          "q": "How long does installation take?",
+          "a": "Between 4 and 6 hours. We arrive in the morning, install, configure and <strong>leave it working the same day</strong>."
+        },
+        {
+          "q": "Does saltwater damage the pool?",
+          "a": "No. The concentration is very low (4-5 g/liter, <strong>less than a tear</strong>). It doesn't damage materials, equipment or garden plants."
+        },
+        {
+          "q": "What maintenance does it need?",
+          "a": "Minimal. Clean the cells 1-2 times a year (we show you how) and add salt occasionally. <strong>Everything else is completely automatic</strong>."
+        }
+      ]
+    },
+    "finalCta": {
+      "title1": "1-day installation.",
+      "title2": "Lifetime savings.",
+      "subtitle": "Stop spending €400 every year on chlorine. Stop wasting time adding products every week.",
+      "cta": "Request quote"
+    }
   }
 }

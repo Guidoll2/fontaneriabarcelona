@@ -10,8 +10,8 @@ interface EmergencyButtonProps {
 export default function EmergencyButton({ locale }: EmergencyButtonProps) {
   const pathname = usePathname();
   
-  // Ocultar el botón en las páginas de tienda y checkout
-  const hideButton = pathname?.includes('/tienda') || pathname?.includes('/checkout');
+  // Ocultar el botón en páginas específicas
+  const hideButton = pathname?.includes('/tienda') || pathname?.includes('/checkout') || pathname?.includes('/instalacion-clorador-salino');
   
   if (hideButton) {
     return null;

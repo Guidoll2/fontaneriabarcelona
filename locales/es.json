@@ -149,5 +149,148 @@
     "privacy": "Política de Privacidad",
     "legal": "Aviso Legal",
     "cookies": "Política de Cookies"
+  },
+  "cloradorSalino": {
+    "meta": {
+      "title": "Instalación Clorador Salino Barcelona | Precio Cerrado 1.800€",
+      "description": "Instalación profesional de clorador salino en Barcelona. Ahorra 400€/año en químicos. Instalación en 1 día. Garantía 2 años. Presupuesto sin compromiso."
+    },
+    "hero": {
+      "badge": "Instaladores certificados en Barcelona",
+      "title1": "Adiós al cloro.",
+      "title2": "Agua cristalina.",
+      "subtitle": "Sistema de cloración salina para tu piscina.",
+      "savings": "Ahorra 400€/año",
+      "savingsText": "en químicos.",
+      "cta": "Solicitar presupuesto",
+      "phone": "677 133 242",
+      "trust": {
+        "warranty": "2 años",
+        "warrantyLabel": "de garantía",
+        "install": "1 día",
+        "installLabel": "instalación",
+        "count": "+200",
+        "countLabel": "instalaciones"
+      }
+    },
+    "comparison": {
+      "title": "La diferencia es clara",
+      "subtitle": "Compara el mantenimiento tradicional con la tecnología de electrólisis salina",
+      "chlorine": {
+        "title": "Cloro tradicional",
+        "subtitle": "Método convencional",
+        "cost": "400€",
+        "maintenance": "Cada semana",
+        "irritation": "Ojos y piel",
+        "smell": "Intenso"
+      },
+      "saltwater": {
+        "title": "Clorador salino",
+        "subtitle": "Electrólisis automática",
+        "recommended": "RECOMENDADO",
+        "cost": "40€",
+        "savings": "Ahorro 90%",
+        "maintenance": "Automático",
+        "irritation": "Ninguna",
+        "smell": "Sin olor"
+      },
+      "labels": {
+        "annualCost": "Coste anual",
+        "maintenance": "Mantenimiento",
+        "irritation": "Irritación",
+        "smell": "Olor a cloro"
+      },
+      "roi": {
+        "investment": "Inversión única",
+        "annualSavings": "Ahorro anual",
+        "payback": "Amortización"
+      }
+    },
+    "results": {
+      "badge": "Trabajos reales en Barcelona",
+      "title": "Resultados que hablan",
+      "subtitle": "Instalaciones reales de cloradores salinos en la zona metropolitana",
+      "before": "Antes",
+      "beforeDesc": "Agua verde por desequilibrio químico. Mantenimiento manual insuficiente.",
+      "after": "Después",
+      "afterDesc": "Agua cristalina con clorador salino. Tratamiento automático 24/7."
+    },
+    "authority": {
+      "title": "Especialistas en tu zona",
+      "subtitle": "Más de 10 años instalando sistemas de cloración en el área metropolitana de Barcelona",
+      "features": {
+        "certified": {
+          "title": "Técnicos certificados",
+          "desc": "Formación oficial en electrólisis salina. Trabajamos con Zodiac, Astralpool y Hayward."
+        },
+        "experience": {
+          "title": "+200 instalaciones",
+          "desc": "Desde 2014 en Vallès, Baix Llobregat y Barcelona. Conocemos cada tipo de piscina."
+        },
+        "response": {
+          "title": "Respuesta rápida",
+          "desc": "Base en Terrassa. Stock de recambios. Servicio postventa directo sin intermediarios."
+        }
+      },
+      "testimonial": {
+        "quote": "Llevaba años comprando cloro cada mes. Me instalaron el clorador en Sant Cugat en medio día, lo configuraron y me explicaron todo.",
+        "highlight": "Lleva dos temporadas funcionando sin tocar nada.",
+        "author": "Jordi M.",
+        "location": "Sant Cugat del Vallès"
+      }
+    },
+    "pricing": {
+      "badge": "Precio todo incluido",
+      "title": "Inversión transparente",
+      "subtitle": "Sin sorpresas. Precio cerrado para instalación estándar.",
+      "price": "1.800",
+      "poolSize": "Piscinas hasta 50m³",
+      "features": {
+        "equipment": { "title": "Equipo clorador", "desc": "Zodiac o Astralpool" },
+        "installation": { "title": "Instalación completa", "desc": "Conexionado eléctrico e hidráulico" },
+        "config": { "title": "Configuración", "desc": "Ajuste según tu piscina" },
+        "salt": { "title": "Sal incluida", "desc": "Primera carga para arranque" },
+        "warranty": { "title": "Garantía 2 años", "desc": "Cubre equipo e instalación. Servicio técnico directo." }
+      },
+      "cta": "Solicitar presupuesto",
+      "disclaimer": "Precio final según configuración de tu instalación"
+    },
+    "form": {
+      "badge": "Respuesta en menos de 24h",
+      "title": "Solicita tu presupuesto",
+      "subtitle": "Te visitamos, evaluamos tu instalación y te damos precio exacto sin compromiso"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Resolvemos tus dudas sobre la cloración salina",
+      "questions": [
+        {
+          "q": "¿Realmente me ahorro dinero?",
+          "a": "Sí. Gasto medio en cloro: <strong>400€/año</strong>. Con clorador salino: <strong>40€/año</strong> en sal. Amortizas la inversión en menos de 5 años y después solo ahorras."
+        },
+        {
+          "q": "¿Sirve para mi piscina actual?",
+          "a": "Sí. Se adapta a cualquier piscina existente: liner, gresite, hormigón o fibra. <strong>No requiere obra</strong>, solo conexión al sistema de filtración."
+        },
+        {
+          "q": "¿Cuánto tarda la instalación?",
+          "a": "Entre 4 y 6 horas. Llegamos por la mañana, instalamos, configuramos y <strong>te lo dejamos funcionando el mismo día</strong>."
+        },
+        {
+          "q": "¿El agua salada daña la piscina?",
+          "a": "No. La concentración es muy baja (4-5 g/litro, <strong>menos que una lágrima</strong>). No daña materiales, equipos ni plantas del jardín."
+        },
+        {
+          "q": "¿Qué mantenimiento necesita?",
+          "a": "Mínimo. Limpiar las células 1-2 veces al año (te enseñamos cómo) y añadir sal ocasionalmente. <strong>El resto es completamente automático</strong>."
+        }
+      ]
+    },
+    "finalCta": {
+      "title1": "Instalación en 1 día.",
+      "title2": "Ahorro de por vida.",
+      "subtitle": "Deja de gastar 400€ cada año en cloro. Deja de perder tiempo añadiendo productos cada semana.",
+      "cta": "Solicitar presupuesto"
+    }
   }
 }
