@@ -20,8 +20,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
   // Hero image carousel
   const heroImages = [
     { src: "/piscinalista.jpeg", alt: locale === 'en' ? 'Professional pool services' : 'Servicios profesionales de piscinas' },
-    { src: "/camionetaplot2.png", alt: locale === 'en' ? 'Boiler installation and repair' : 'Instalación y reparación de calderas' },
-    { src: "/caldera.png", alt: locale === 'en' ? 'Professional plumbing services' : 'Servicios profesionales de fontanería' }
+    { src: "/camionetaplot2-optimized.jpg", alt: locale === 'en' ? 'Boiler installation and repair' : 'Instalación y reparación de calderas' },
+    { src: "/caldera-optimized.jpg", alt: locale === 'en' ? 'Professional plumbing services' : 'Servicios profesionales de fontanería' }
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -348,7 +348,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             <ServiceCard 
               title={dict.services.calderas.title} 
               description={dict.services.calderas.desc} 
-              img="/caldera.png" 
+              img="/caldera-optimized.jpg" 
               href={`/${locale}/servicios/calderas`}
               icon={serviceIcons.calderas}
               locale={locale}
@@ -504,7 +504,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image 
-                src="/adamback.png"
+                src="/adamback-optimized.jpg"
                 alt={locale === 'en' ? 'Our professional team' : 'Nuestro equipo profesional'}
                 fill
                 className="object-cover"

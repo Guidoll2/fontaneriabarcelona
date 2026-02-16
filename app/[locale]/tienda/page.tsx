@@ -41,7 +41,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "1",
       name: "Caldera de Condensación 24kW",
       price: 1200,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Caldera de gas de condensación de alta eficiencia. Perfecta para viviendas de hasta 150m². Bajo consumo y mínimas emisiones.",
       installationIncluded: true
     },
@@ -49,7 +49,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "2",
       name: "Caldera de Condensación 30kW",
       price: 1450,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Ideal para espacios más grandes. Sistema de modulación inteligente que optimiza el consumo energético.",
       installationIncluded: true
     },
@@ -57,7 +57,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "3",
       name: "Caldera Mixta 24kW",
       price: 1350,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Calefacción y agua caliente sanitaria instantánea. Diseño compacto perfecto para cualquier espacio.",
       installationIncluded: true
     },
@@ -65,7 +65,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "4",
       name: "Caldera de Bajo NOx 28kW",
       price: 1550,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Tecnología de bajas emisiones. Certificación energética A. Control remoto vía WiFi incluido.",
       installationIncluded: true
     },
@@ -73,7 +73,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "5",
       name: "Caldera Estanca 20kW",
       price: 1100,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Seguridad garantizada con cámara estanca. Ideal para apartamentos y espacios reducidos.",
       installationIncluded: true
     },
@@ -81,7 +81,7 @@ export default function TiendaPage({ params }: { params: Promise<{ locale: strin
       id: "6",
       name: "Caldera Premium 35kW",
       price: 1800,
-      image: "/caldera.png",
+      image: "/caldera-optimized.jpg",
       description: "Modelo Premium con pantalla táctil LCD. Control inteligente de temperatura y conectividad Smart Home.",
       installationIncluded: true
     }

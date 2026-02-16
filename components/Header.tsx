@@ -95,12 +95,13 @@ export default function Header({ locale }: { locale?: string }) {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Image 
-                src="/logo.jpeg" 
+                src="/logo-optimized.jpg" 
                 alt="Fontanería Logo" 
                 width={48}
                 height={48}
                 className="object-cover" 
                 priority
+                sizes="48px"
               />
             </motion.div>
             <div className="flex flex-col">

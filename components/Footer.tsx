@@ -21,11 +21,12 @@ export default function Footer({ locale = "es" }: { locale?: string }) {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 rounded-lg overflow-hidden">
                 <Image 
-                  src="/logo.jpeg" 
+                  src="/logo-optimized.jpg" 
                   alt="Fontanería Logo" 
-                  fill
+                  width={40}
+                  height={40}
                   className="object-cover"
-                  unoptimized
+                  sizes="40px"
                 />
               </div>
               <div>

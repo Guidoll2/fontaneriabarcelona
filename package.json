@@ -49,6 +49,10 @@
     "fontaneria",
     "barcelona"
   ],
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
   "license": "MIT",
   "type": "module",
   "next": {

@@ -4,7 +4,7 @@ import { montserrat, poppins } from "./fonts";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL("https://www.fontaneriaipiscinas.com"),
   title: {
     template: "%s | Fontanería Barcelona",
     default: "Fontanería Barcelona - Emergencias 24h | Calderas | Piscinas",
@@ -44,6 +44,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`scroll-smooth ${montserrat.variable} ${poppins.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <GoogleAnalytics />
       </head>
       <body className="bg-white text-secondary-900 antialiased">{children}</body>

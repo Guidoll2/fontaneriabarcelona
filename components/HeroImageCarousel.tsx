@@ -7,7 +7,7 @@ const images = [
   "/piscinalista.jpeg",
   "/bachaoro.jpeg",
   "/piscinaslista2.jpeg",
-  "/calderamodificada.png",
+  "/calderamodificada-optimized.jpg",
   "/bachabaño.jpeg"
 ];
 

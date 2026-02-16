@@ -21,7 +21,7 @@ export default async function Calderas({ params }: { params: Promise<{ locale: s
 
   const galleryImages = [
     { src: "/calentadorexterno.jpeg", alt: "Instalación de caldera" },
-    { src: "/calderamodificada.png", alt: "Mantenimiento de caldera" },
+    { src: "/calderamodificada-optimized.jpg", alt: "Mantenimiento de caldera" },
     { src: "/calefon.jpeg", alt: "Reparación de caldera" },
     { src: "/termotanque.jpeg", alt: "Caldera reparada" },
     { src: "/termoexterior2.jpeg", alt: "Sistema de calefacción" },
@@ -32,7 +32,7 @@ export default async function Calderas({ params }: { params: Promise<{ locale: s
     <ServicePageLayout
       title={dict.services.calderas.title}
       description={dict.services.calderas.desc}
-      image="/caldera.png"
+      image="/caldera-optimized.jpg"
       features={dict.services.calderas.features}
       locale={locale}
       galleryImages={galleryImages}
