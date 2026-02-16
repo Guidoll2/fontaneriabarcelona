@@ -1,8 +1,13 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import LeadFormClorador from "../../../components/LeadFormClorador";
+import dynamic from "next/dynamic";
 import { CheckCircle, XCircle, Shield, Award, Clock, Euro } from "lucide-react";
 import { getDict } from "../../../lib/i18n";
+
+// Dynamic import for non-critical component
+const LeadFormClorador = dynamic(() => import("../../../components/LeadFormClorador"), {
+  loading: () => <div className="h-96 bg-slate-50 animate-pulse rounded-2xl" />,
+});
 
 type Params = {
   params: Promise<{ locale: string }>;

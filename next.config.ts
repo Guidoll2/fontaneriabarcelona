@@ -7,9 +7,14 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion'],
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  reactStrictMode: true,
   outputFileTracingRoot: path.join(__dirname),
+  transpilePackages: [],
 };
 
 export default nextConfig;
