@@ -12,7 +12,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <CartProvider>
       <Header locale={locale} />
-      <main className="min-h-[60vh]">
+      <main className="min-h-[60vh] overflow-x-hidden">
         {children}
       </main>
       <Footer locale={locale} />

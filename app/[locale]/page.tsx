@@ -389,7 +389,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-primary-50 rounded-xl p-6">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-primary-50 rounded-xl p-4 sm:p-6 max-w-full">
               <svg className="w-12 h-12 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -457,7 +457,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               href="https://share.google/Loj7ZpCRfaGazpoYz"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-primary-300 rounded-xl hover:bg-primary-50 hover:border-primary-500 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="inline-flex items-center gap-3 px-4 py-3 sm:px-8 sm:py-4 bg-white border-2 border-primary-300 rounded-xl hover:bg-primary-50 hover:border-primary-500 transition-all duration-300 shadow-lg hover:shadow-xl group max-w-full"
             >
               <svg className="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
@@ -492,13 +492,13 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-secondary-50">
+      <section className="section-padding bg-secondary-50 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl"
@@ -513,8 +513,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
 
             {/* Content */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="space-y-6"

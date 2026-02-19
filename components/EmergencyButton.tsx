@@ -32,7 +32,7 @@ export default function EmergencyButton({ locale }: EmergencyButtonProps) {
       transition={{ duration: 0.5, delay: 1 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 group"
       aria-label="Llamar servicio de emergencia"
     >
       <div className="relative">
@@ -40,10 +40,10 @@ export default function EmergencyButton({ locale }: EmergencyButtonProps) {
         <span className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-75"></span>
         
         {/* Main button */}
-        <div className="relative bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 px-6 py-4 flex items-center gap-3">
+        <div className="relative bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 px-4 py-3 sm:px-6 sm:py-4 flex items-center gap-3 flex-wrap sm:flex-nowrap max-w-[90vw] min-w-0">
           {/* Phone icon with animation */}
           <svg 
-            className="w-6 h-6 animate-pulse" 
+            className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -57,12 +57,12 @@ export default function EmergencyButton({ locale }: EmergencyButtonProps) {
           </svg>
           
           {/* Text */}
-          <span className="font-bold text-sm sm:text-base whitespace-nowrap">
+          <span className="font-bold text-sm sm:text-base whitespace-normal sm:whitespace-nowrap">
             {buttonText[locale as keyof typeof buttonText] || buttonText.es}
           </span>
           
           {/* Emergency badge */}
-          <span className="absolute -top-1 -right-1 bg-yellow-400 text-red-900 text-xs font-black px-2 py-0.5 rounded-full animate-bounce shadow-lg">
+          <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 sm:-top-1 sm:-right-1 sm:translate-x-0 sm:-translate-y-0 bg-yellow-400 text-red-900 text-xs font-black px-2 py-0.5 rounded-full animate-bounce shadow-lg">
             SOS
           </span>
         </div>
