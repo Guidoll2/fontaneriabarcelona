@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { CheckCircle, XCircle, Shield, Award, Clock, Euro } from "lucide-react";
+import { CheckCircle, XCircle, Shield, Award, Clock, Euro, Wifi, Smartphone } from "lucide-react";
 import { getDict } from "../../../lib/i18n";
+import TrackedPhoneLink from "../../../components/TrackedPhoneLink";
 
 // Dynamic import for non-critical component
 const LeadFormClorador = dynamic(() => import("../../../components/LeadFormClorador"), {
@@ -50,7 +51,7 @@ export default async function CloradorSalinoPage({ params }: Params) {
       "@type": "LocalBusiness",
       "name": "Fontanería Low Cost",
       "image": "https://www.fontanerialowcost.com/logo.png",
-      "telephone": "+34-XXX-XXX-XXX",
+      "telephone": "+34677133242",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Barcelona",
@@ -64,7 +65,7 @@ export default async function CloradorSalinoPage({ params }: Params) {
     },
     "offers": {
       "@type": "Offer",
-      "price": "1800",
+      "price": "1400",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2026-12-31",
@@ -89,12 +90,12 @@ export default async function CloradorSalinoPage({ params }: Params) {
       <div className="sticky top-0 z-40 backdrop-blur-xl bg-white/70 border-b border-white/20 shadow-sm md:hidden">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <span className="text-slate-800 font-semibold text-sm">{locale === "en" ? "Salt Chlorinator" : "Clorador Salino"}</span>
-          <a
-            href="tel:+34677133242"
+          <TrackedPhoneLink
+            source="clorador-sticky-header"
             className="bg-slate-900 text-white px-4 py-2 rounded-full font-medium text-sm hover:bg-slate-800 transition-all"
           >
             {locale === "en" ? "Call now" : "Llamar ahora"}
-          </a>
+          </TrackedPhoneLink>
         </div>
       </div>
 
@@ -108,77 +109,106 @@ export default async function CloradorSalinoPage({ params }: Params) {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
         <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-sm font-medium text-slate-600">{t.hero.badge}</span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-slate-900">
-              {t.hero.title1}
-              <br />
-              <span className="bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent">
-                {t.hero.title2}
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl mb-12 text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
-              {t.hero.subtitle}
-              <span className="text-slate-800 font-medium"> {t.hero.savings}</span> {t.hero.savingsText}
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <a
-                href="#formulario"
-                className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium text-lg shadow-xl shadow-slate-900/20 transition-all hover:shadow-2xl hover:shadow-slate-900/30 hover:-translate-y-0.5"
-              >
-                {t.hero.cta}
-                <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-              </a>
-              <a
-                href="tel:+34677133242"
-                className="flex items-center gap-3 text-slate-700 hover:text-slate-900 px-6 py-4 rounded-full font-medium text-lg transition-colors bg-white/50 backdrop-blur-sm border border-slate-200 hover:border-slate-300 hover:bg-white/80"
-              >
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left: Text content */}
+              <div className="text-center md:text-left">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-sm font-medium text-slate-600">{t.hero.badge}</span>
                 </div>
-                {t.hero.phone}
-              </a>
-            </div>
 
-            {/* Trust indicators - Glass Cards */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
-                  <Shield className="w-5 h-5 text-white" />
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-slate-900">
+                  {t.hero.title1}
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent">
+                    {t.hero.title2}
+                  </span>
+                </h1>
+
+                <p className="text-xl md:text-2xl mb-12 text-slate-600 max-w-2xl leading-relaxed font-light">
+                  {t.hero.subtitle}
+                  <span className="text-slate-800 font-medium"> {t.hero.savings}</span> {t.hero.savingsText}
+                </p>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-12">
+                  <a
+                    href="#formulario"
+                    className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full font-medium text-lg shadow-xl shadow-slate-900/20 transition-all hover:shadow-2xl hover:shadow-slate-900/30 hover:-translate-y-0.5"
+                  >
+                    {t.hero.cta}
+                    <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                  <TrackedPhoneLink
+                    source="clorador-hero"
+                    className="flex items-center gap-3 text-slate-700 hover:text-slate-900 px-6 py-4 rounded-full font-medium text-lg transition-colors bg-white/50 backdrop-blur-sm border border-slate-200 hover:border-slate-300 hover:bg-white/80"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    {t.hero.phone}
+                  </TrackedPhoneLink>
                 </div>
-                <div className="text-left">
-                  <div className="text-sm font-semibold text-slate-800">{t.hero.trust.warranty}</div>
-                  <div className="text-xs text-slate-500">{t.hero.trust.warrantyLabel}</div>
+
+                {/* Trust indicators - Glass Cards */}
+                <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                      <Shield className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-slate-800">{t.hero.trust.warranty}</div>
+                      <div className="text-xs text-slate-500">{t.hero.trust.warrantyLabel}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                      <Clock className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-slate-800">{t.hero.trust.install}</div>
+                      <div className="text-xs text-slate-500">{t.hero.trust.installLabel}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                      <Award className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-slate-800">{t.hero.trust.count}</div>
+                      <div className="text-xs text-slate-500">{t.hero.trust.countLabel}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
-                  <Clock className="w-5 h-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-sm font-semibold text-slate-800">{t.hero.trust.install}</div>
-                  <div className="text-xs text-slate-500">{t.hero.trust.installLabel}</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
-                  <Award className="w-5 h-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-sm font-semibold text-slate-800">{t.hero.trust.count}</div>
-                  <div className="text-xs text-slate-500">{t.hero.trust.countLabel}</div>
+              {/* Right: Product Image */}
+              <div className="relative flex items-center justify-center">
+                {/* Glow effect behind product */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-sky-300/15 to-transparent rounded-full blur-3xl scale-75" />
+                <div className="absolute w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 rounded-full blur-2xl" />
+                
+                <div className="relative">
+                  <Image
+                    src="/aiguamunt-nobg.png"
+                    alt={locale === "en" ? "BSV salt chlorinator with WiFi and Bluetooth - professional pool equipment" : "Clorador salino BSV con WiFi y Bluetooth - equipo profesional para piscinas"}
+                    width={500}
+                    height={500}
+                    className="w-full max-w-md md:max-w-lg drop-shadow-2xl"
+                    priority
+                  />
+                  {/* WiFi + Bluetooth badge */}
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-white/40 shadow-lg">
+                    <Wifi className="w-4 h-4 text-cyan-600" />
+                    <span className="text-sm font-semibold text-slate-800">WiFi + Bluetooth</span>
+                    <Smartphone className="w-4 h-4 text-cyan-600" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -295,7 +325,7 @@ export default async function CloradorSalinoPage({ params }: Params) {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="text-center md:text-left">
                     <p className="text-slate-400 text-sm mb-1">{t.comparison.roi.investment}</p>
-                    <p className="text-4xl font-bold text-white">1.800€</p>
+                    <p className="text-4xl font-bold text-white">Desde 1.400€</p>
                   </div>
                   <div className="hidden md:block w-px h-16 bg-slate-700" />
                   <div className="text-center md:text-left">
@@ -314,8 +344,111 @@ export default async function CloradorSalinoPage({ params }: Params) {
         </div>
       </section>
 
-      {/* Resultados Reales - Before/After Section */}
+      {/* Equipo que Instalamos - Product Showcase */}
       <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-10 right-0 w-80 h-80 bg-cyan-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-0 w-72 h-72 bg-sky-100/30 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-cyan-50 border border-cyan-200">
+                <Wifi className="w-4 h-4 text-cyan-600" />
+                <span className="text-sm font-medium text-cyan-700">{t.equipment.badge}</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 tracking-tight">
+                {t.equipment.title}
+              </h2>
+              <p className="text-lg text-slate-500 max-w-xl mx-auto">
+                {t.equipment.subtitle}
+              </p>
+            </div>
+
+            {/* Product Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* BSV Chlorinator */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/5 rounded-3xl blur-xl transition-all group-hover:from-cyan-500/20" />
+                <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200 rounded-3xl p-6 h-full transition-all group-hover:shadow-xl group-hover:shadow-cyan-500/10 group-hover:-translate-y-1">
+                  <div className="relative aspect-square mb-6 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl" />
+                    <Image
+                      src="/bsv-nobg.png"
+                      alt={locale === "en" ? "BSV salt chlorinator with WiFi and Bluetooth connectivity" : "Clorador salino BSV con conectividad WiFi y Bluetooth"}
+                      width={280}
+                      height={280}
+                      className="relative z-10 w-full h-full object-contain p-4 drop-shadow-lg"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold">WiFi</span>
+                    <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold">Bluetooth</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t.equipment.products.bsv.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{t.equipment.products.bsv.desc}</p>
+                </div>
+              </div>
+
+              {/* Aiguamunt Chlorinator */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/5 rounded-3xl blur-xl transition-all group-hover:from-cyan-500/20" />
+                <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200 rounded-3xl p-6 h-full transition-all group-hover:shadow-xl group-hover:shadow-cyan-500/10 group-hover:-translate-y-1">
+                  <div className="relative aspect-square mb-6 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl" />
+                    <Image
+                      src="/aiguamunt-nobg.png"
+                      alt={locale === "en" ? "Aiguamunt salt chlorinator with WiFi and Bluetooth" : "Clorador salino Aiguamunt con WiFi y Bluetooth"}
+                      width={280}
+                      height={280}
+                      className="relative z-10 w-full h-full object-contain p-4 drop-shadow-lg"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold">WiFi</span>
+                    <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-bold">Bluetooth</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t.equipment.products.aiguamunt.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{t.equipment.products.aiguamunt.desc}</p>
+                </div>
+              </div>
+
+              {/* Bomba Dosificadora */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/5 rounded-3xl blur-xl transition-all group-hover:from-cyan-500/20" />
+                <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200 rounded-3xl p-6 h-full transition-all group-hover:shadow-xl group-hover:shadow-cyan-500/10 group-hover:-translate-y-1">
+                  <div className="relative aspect-square mb-6 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl" />
+                    <Image
+                      src="/bomba-nobg.png"
+                      alt={locale === "en" ? "Automatic dosing pump for pool treatment" : "Bomba dosificadora automática para tratamiento de piscinas"}
+                      width={280}
+                      height={280}
+                      className="relative z-10 w-full h-full object-contain p-4 drop-shadow-lg"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">{locale === "en" ? "Automatic" : "Automática"}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t.equipment.products.pump.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{t.equipment.products.pump.desc}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTA strip */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-50 border border-slate-200">
+                <Smartphone className="w-5 h-5 text-cyan-600" />
+                <span className="text-slate-700 font-medium">{t.equipment.controlText}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resultados Reales - Before/After Section */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* Header */}
@@ -547,8 +680,18 @@ export default async function CloradorSalinoPage({ params }: Params) {
             <div className="relative max-w-2xl mx-auto">
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-3xl blur-lg opacity-30" />
               <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10">
-                {/* Price */}
-                <div className="text-center mb-10">
+                {/* Product image + Price */}
+                <div className="flex flex-col items-center mb-10">
+                  <div className="relative w-40 h-40 mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-sky-500/20 rounded-full blur-2xl" />
+                    <Image
+                      src="/aiguamunt-nobg.png"
+                      alt={locale === "en" ? "Aiguamunt salt chlorinator included in package" : "Clorador salino Aiguamunt incluido en el paquete"}
+                      width={160}
+                      height={160}
+                      className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                    />
+                  </div>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
                       {t.pricing.price}
@@ -723,15 +866,15 @@ export default async function CloradorSalinoPage({ params }: Params) {
                 {t.finalCta.cta}
                 <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
               </a>
-              <a
-                href="tel:+34677133242"
+              <TrackedPhoneLink
+                source="clorador-final-cta"
                 className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium text-lg transition-colors border border-white/10"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 677 133 242
-              </a>
+              </TrackedPhoneLink>
             </div>
           </div>
         </div>

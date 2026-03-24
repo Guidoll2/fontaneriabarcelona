@@ -152,8 +152,8 @@
   },
   "cloradorSalino": {
     "meta": {
-      "title": "Salt Chlorinator Installation Barcelona | Fixed Price €1,800",
-      "description": "Professional salt chlorinator installation in Barcelona. Save €400/year on chemicals. 1-day installation. 2-year warranty. Free quote."
+      "title": "Salt Chlorinator Installation Barcelona | From €1,400",
+      "description": "Professional salt chlorinator installation in Barcelona. From €1,400 depending on configuration. Save €400/year on chemicals. 1-day installation. 2-year warranty. Free quote."
     },
     "hero": {
       "badge": "Certified installers in Barcelona",
@@ -241,9 +241,9 @@
     },
     "pricing": {
       "badge": "All-inclusive price",
-      "title": "Transparent investment",
-      "subtitle": "No surprises. Fixed price for standard installation.",
-      "price": "1,800",
+      "title": "Investment from €1,400",
+      "subtitle": "From €1,400 for standard installation. Final price depends on installation.",
+      "price": "1,400",
       "poolSize": "Pools up to 50m³",
       "features": {
         "equipment": { "title": "Chlorinator unit", "desc": "Zodiac or Astralpool" },
@@ -285,6 +285,26 @@
           "a": "Minimal. Clean the cells 1-2 times a year (we show you how) and add salt occasionally. <strong>Everything else is completely automatic</strong>."
         }
       ]
+    },
+    "equipment": {
+      "badge": "WiFi + Bluetooth Technology",
+      "title": "Premium brand equipment",
+      "subtitle": "We install chlorinators with WiFi and Bluetooth connectivity. Control your pool from your phone, wherever you are.",
+      "controlText": "Control your pool from your phone with the app",
+      "products": {
+        "bsv": {
+          "name": "BSV Salt Chlorinator",
+          "desc": "High-efficiency chlorinator with WiFi and Bluetooth control. Monitor and adjust chlorine levels from your smartphone in real time."
+        },
+        "aiguamunt": {
+          "name": "Aiguamunt Salt Chlorinator",
+          "desc": "Smart salt chlorination system with full connectivity. Complete remote management and automatic alerts on your phone."
+        },
+        "pump": {
+          "name": "Dosing Pump",
+          "desc": "Automatic and precise pH dosing. Maintains perfect water balance without manual intervention."
+        }
+      }
     },
     "finalCta": {
       "title1": "1-day installation.",

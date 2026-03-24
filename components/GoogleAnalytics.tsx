@@ -4,16 +4,28 @@ import Script from 'next/script';
 
 export default function GoogleAnalytics() {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
-  if (!measurementId) {
+  if (!measurementId && !googleAdsId) {
     return null;
   }
+
+  const configLines = [];
+  if (measurementId) {
+    configLines.push(`gtag('config', '${measurementId}', { page_path: window.location.pathname });`);
+  }
+  if (googleAdsId) {
+    configLines.push(`gtag('config', '${googleAdsId}');`);
+  }
+
+  // Use GA measurement ID or Ads ID for the script src
+  const primaryId = measurementId || googleAdsId;
 
   return (
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${primaryId}`}
       />
       <Script
         id="google-analytics"
@@ -23,9 +35,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${measurementId}', {
-              page_path: window.location.pathname,
-            });
+            ${configLines.join('\n            ')}
           `,
         }}
       />

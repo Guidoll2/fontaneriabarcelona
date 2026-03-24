@@ -152,8 +152,8 @@
   },
   "cloradorSalino": {
     "meta": {
-      "title": "Instalación Clorador Salino Barcelona | Precio Cerrado 1.800€",
-      "description": "Instalación profesional de clorador salino en Barcelona. Ahorra 400€/año en químicos. Instalación en 1 día. Garantía 2 años. Presupuesto sin compromiso."
+      "title": "Instalación Clorador Salino Barcelona | Desde 1.400€",
+      "description": "Instalación profesional de clorador salino en Barcelona. Desde 1.400€ según configuración. Ahorra 400€/año en químicos. Instalación en 1 día. Garantía 2 años. Presupuesto sin compromiso."
     },
     "hero": {
       "badge": "Instaladores certificados en Barcelona",
@@ -241,9 +241,9 @@
     },
     "pricing": {
       "badge": "Precio todo incluido",
-      "title": "Inversión transparente",
-      "subtitle": "Sin sorpresas. Precio cerrado para instalación estándar.",
-      "price": "1.800",
+      "title": "Inversión desde 1.400€",
+      "subtitle": "Desde 1.400€ para instalación estándar. Precio final según instalación.",
+      "price": "1.400",
       "poolSize": "Piscinas hasta 50m³",
       "features": {
         "equipment": { "title": "Equipo clorador", "desc": "Zodiac o Astralpool" },
@@ -285,6 +285,26 @@
           "a": "Mínimo. Limpiar las células 1-2 veces al año (te enseñamos cómo) y añadir sal ocasionalmente. <strong>El resto es completamente automático</strong>."
         }
       ]
+    },
+    "equipment": {
+      "badge": "Tecnología WiFi + Bluetooth",
+      "title": "Equipos de primera marca",
+      "subtitle": "Instalamos cloradores con conectividad WiFi y Bluetooth. Controla tu piscina desde el móvil, estés donde estés.",
+      "controlText": "Controla tu piscina desde el móvil con la app",
+      "products": {
+        "bsv": {
+          "name": "Clorador Salino BSV",
+          "desc": "Clorador de alta eficiencia con control WiFi y Bluetooth. Monitoriza y ajusta los niveles de cloro desde tu smartphone en tiempo real."
+        },
+        "aiguamunt": {
+          "name": "Clorador Salino Aiguamunt",
+          "desc": "Sistema de cloración salina con conectividad inteligente. Gestión remota completa y alertas automáticas en tu móvil."
+        },
+        "pump": {
+          "name": "Bomba Dosificadora",
+          "desc": "Dosificación automática y precisa del pH. Mantiene el equilibrio perfecto del agua sin intervención manual."
+        }
+      }
     },
     "finalCta": {
       "title1": "Instalación en 1 día.",

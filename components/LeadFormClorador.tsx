@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
 
 type FormData = {
@@ -32,6 +32,21 @@ export default function LeadFormClorador({ locale = "es" }: { locale?: string })
   const [touched, setTouched] = useState<Set<string>>(new Set());
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [trackingParams, setTrackingParams] = useState<Record<string, string>>({});
+
+  // Capture UTM params and gclid on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tracking: Record<string, string> = {};
+    const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+    keys.forEach((key) => {
+      const val = params.get(key);
+      if (val) tracking[key] = val;
+    });
+    if (Object.keys(tracking).length > 0) {
+      setTrackingParams(tracking);
+    }
+  }, []);
 
   // Traducciones simples
   const t = {
@@ -138,6 +153,7 @@ export default function LeadFormClorador({ locale = "es" }: { locale?: string })
           ...form,
           source: "landing-clorador-salino",
           timestamp: new Date().toISOString(),
+          ...trackingParams,
         }),
       });
 
@@ -161,6 +177,19 @@ export default function LeadFormClorador({ locale = "es" }: { locale?: string })
           event_label: "Clorador Salino",
           value: 1800,
         });
+      }
+
+      // Google Ads Conversion (requires AW-ID configured in GoogleAnalytics)
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+        const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+        if (adsId && conversionLabel) {
+          (window as any).gtag("event", "conversion", {
+            send_to: `${adsId}/${conversionLabel}`,
+            value: 1800,
+            currency: "EUR",
+          });
+        }
       }
 
       setStatus("success");
