@@ -1,3 +1,4 @@
+// app/layout.tsx completo
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { montserrat, poppins } from "./fonts";
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`scroll-smooth ${montserrat.variable} ${poppins.variable}`}>
       <head>
+        {/* Aquí ya se inyectan ambos trackings */}
         <GoogleAnalytics />
       </head>
       <body className="bg-white text-secondary-900 antialiased">{children}</body>
