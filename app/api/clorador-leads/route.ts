@@ -73,8 +73,61 @@ export async function POST(request: NextRequest) {
     // Por ahora, solo logueamos (REEMPLAZAR EN PRODUCCIÓN)
     console.log("📋 Nuevo lead de Clorador Salino:", leadData);
 
-    // Simulación de email enviado
-    console.log(`✉️ Email enviado a: admin@fontanerialowcost.com`);
+    const MAILERSEND_API_KEY = process.env.MAILERSEND_API_KEY;
+    const FROM_EMAIL = process.env.MAILERSEND_FROM_EMAIL;
+    const FROM_NAME = process.env.MAILERSEND_FROM_NAME || "Fontanería Low Cost";
+    const TO_EMAIL = process.env.MAILERSEND_TO_EMAIL;
+    const TO_NAME = process.env.MAILERSEND_TO_NAME || "Guido Llaurado";
+
+    if (!MAILERSEND_API_KEY || !FROM_EMAIL || !TO_EMAIL) {
+      throw new Error("Faltan variables de entorno de MailerSend");
+    }
+
+    const mailerRes = await fetch("https://api.mailersend.com/v1/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${MAILERSEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: {
+          email: FROM_EMAIL,
+          name: FROM_NAME,
+        },
+        to: [
+          {
+            email: TO_EMAIL,
+            name: TO_NAME,
+          }
+        ],
+        subject: `🎯 Nuevo Lead: Clorador Salino - ${leadData.nombre}`,
+        text: `Nuevo lead de la landing de Clorador Salino:\n\nNombre: ${leadData.nombre}\nTeléfono: ${leadData.telefono}\nPoblación: ${leadData.poblacion}\nTamaño piscina: ${leadData.tipoPiscina}\nMensaje: ${leadData.mensaje || "Sin mensaje"}\nFecha: ${new Date(leadData.timestamp).toLocaleString("es-ES")}\nIP: ${leadData.ip}`,
+        html: `
+          <h2>🎯 Nuevo Lead: Instalación Clorador Salino</h2>
+          <p><strong>Nombre:</strong> ${leadData.nombre}</p>
+          <p><strong>Teléfono:</strong> <a href="tel:${leadData.telefono}">${leadData.telefono}</a></p>
+          <p><strong>Población:</strong> ${leadData.poblacion}</p>
+          <p><strong>Tamaño piscina:</strong> ${leadData.tipoPiscina}</p>
+          <p><strong>Mensaje:</strong> ${leadData.mensaje || "Sin mensaje"}</p>
+          <hr />
+          <p><small>Fecha: ${new Date(leadData.timestamp).toLocaleString("es-ES")}</small></p>
+          <p><small>IP: ${leadData.ip}</small></p>
+        `,
+      }),
+    });
+
+    const mailerBody = await mailerRes.text();
+    console.log("📨 MailerSend status:", mailerRes.status, mailerRes.statusText);
+    console.log("📨 MailerSend body:", mailerBody);
+
+    if (!mailerRes.ok) {
+      return NextResponse.json(
+        { error: "MailerSend error", status: mailerRes.status, details: mailerBody },
+        { status: 502 }
+      );
+    }
+
+    console.log(`✉️ Email enviado a: ${TO_EMAIL}`);
     console.log(`📱 SMS enviado a: [TELÉFONO_EMPRESA]`);
 
     // ===================================================
