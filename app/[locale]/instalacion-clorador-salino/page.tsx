@@ -40,7 +40,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function CloradorSalinoPage({ params }: Params) {
   const { locale } = await params;
   const dict = getDict(locale);
-  const t = dict.cloradorSalino;
+  const defaultDict = getDict("es");
+  const t = dict.cloradorSalino ?? defaultDict.cloradorSalino;
 
   // JSON-LD Schema para SEO
   const jsonLd = {

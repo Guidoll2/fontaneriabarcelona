@@ -149,5 +149,144 @@
     "privacy": "Política de Privacitat",
     "legal": "Avís Legal",
     "cookies": "Política de Galetes"
+  },
+  "cloradorSalino": {
+    "meta": {
+      "title": "Instal·lació Clorador Salí Barcelona | Des de 1.400€",
+      "description": "Instal·lació professional de clorador salí a Barcelona. Des de 1.400€ segons configuració. Estalvia 400€/any en químics. Instal·lació en 1 dia. Garantia 2 anys. Pressupost sense compromís."
+    },
+    "hero": {
+      "badge": "Instal·ladors certificats a Barcelona",
+      "title1": "Adéu al clor.",
+      "title2": "Aigua cristal·lina.",
+      "subtitle": "Sistema de cloració salina per a la teva piscina.",
+      "savings": "Estalvia 400€/any",
+      "savingsText": "en químics.",
+      "cta": "Sol·licita pressupost",
+      "phone": "677 133 242",
+      "trust": {
+        "warranty": "2 anys",
+        "warrantyLabel": "de garantia",
+        "install": "1 dia",
+        "installLabel": "instal·lació",
+        "count": "+200",
+        "countLabel": "instal·lacions"
+      }
+    },
+    "comparison": {
+      "title": "La diferència és clara",
+      "subtitle": "Compara el manteniment tradicional amb la tecnologia d'electròlisi salina",
+      "chlorine": {
+        "title": "Clor tradicional",
+        "subtitle": "Mètode convencional",
+        "cost": "400€",
+        "maintenance": "Cada setmana",
+        "irritation": "Ulls i pell",
+        "smell": "Intens"
+      },
+      "saltwater": {
+        "title": "Clorador salí",
+        "subtitle": "Electròlisi automàtica",
+        "recommended": "RECOMANAT",
+        "cost": "40€",
+        "savings": "Estalvi 90%",
+        "maintenance": "Automàtic",
+        "irritation": "Cap",
+        "smell": "Sense olor"
+      },
+      "labels": {
+        "annualCost": "Cost anual",
+        "maintenance": "Manteniment",
+        "irritation": "Irritació",
+        "smell": "Olor a clor"
+      },
+      "roi": {
+        "investment": "Inversió única",
+        "annualSavings": "Estalvi anual",
+        "payback": "Amortització"
+      }
+    },
+    "results": {
+      "badge": "Treballs reals a Barcelona",
+      "title": "Resultats que parlen",
+      "subtitle": "Instal·lacions reals de cloradors salins a la zona metropolitana",
+      "before": "Abans",
+      "beforeDesc": "Aigua verda per desequilibri químic. Manteniment manual insuficient.",
+      "after": "Després",
+      "afterDesc": "Aigua cristal·lina amb clorador salí. Tractament automàtic 24/7."
+    },
+    "authority": {
+      "title": "Especialistes a la teva zona",
+      "subtitle": "Més de 10 anys instal·lant sistemes de cloració a l'àrea metropolitana de Barcelona",
+      "features": {
+        "certified": {
+          "title": "Tècnics certificats",
+          "desc": "Formació oficial en electròlisi salina. Treballem amb Zodiac, Astralpool i Hayward."
+        },
+        "experience": {
+          "title": "+200 instal·lacions",
+          "desc": "Des de 2014 a Vallès, Baix Llobregat i Barcelona. Coneixem cada tipus de piscina."
+        },
+        "response": {
+          "title": "Resposta ràpida",
+          "desc": "Base a Terrassa. Estoc de recanvis. Servei postvenda directe sense intermediaris."
+        }
+      },
+      "testimonial": {
+        "quote": "Portava anys comprant clor cada mes. Em van instal·lar el clorador a Sant Cugat en mig dia, ho van configurar i em van explicar tot.",
+        "highlight": "Fa dues temporades que funciona sense tocar res.",
+        "author": "Jordi M.",
+        "location": "Sant Cugat del Vallès"
+      }
+    },
+    "pricing": {
+      "badge": "Preu tot inclòs",
+      "title": "Inversió des de 1.400€",
+      "subtitle": "Des de 1.400€ per a instal·lació estàndard. Preu final segons instal·lació.",
+      "price": "1.400",
+      "poolSize": "Piscines fins a 50m³",
+      "features": {
+        "equipment": { "title": "Equip clorador", "desc": "Zodiac o Astralpool" },
+        "installation": { "title": "Instal·lació completa", "desc": "Connexió elèctrica i hidràulica" },
+        "config": { "title": "Configuració", "desc": "Ajust segons la teva piscina" },
+        "salt": { "title": "Sal inclosa", "desc": "Primera càrrega per arrencada" },
+        "warranty": { "title": "Garantia 2 anys", "desc": "Cobreix equip i instal·lació. Servei tècnic directe." }
+      },
+      "cta": "Sol·licita pressupost",
+      "disclaimer": "Preu final segons configuració de la teva instal·lació"
+    },
+    "form": {
+      "badge": "Resposta en menys de 24h",
+      "title": "Sol·licita el teu pressupost",
+      "subtitle": "T'hi visitem, avaluem la teva instal·lació i t'oferim preu exacte sense compromís"
+    },
+    "faq": {
+      "title": "Preguntes freqüents",
+      "subtitle": "Resolem els teus dubtes sobre la cloració salina",
+      "questions": [
+        { "q": "Realment m'estalvio diners?", "a": "Sí. Cost mitjà en clor: <strong>400€/any</strong>. Amb clorador salí: <strong>40€/any</strong> en sal. Amortitzes la inversió en menys de 5 anys i després només estalvies." },
+        { "q": "Serveix per a la meva piscina actual?", "a": "Sí. S'adapta a qualsevol piscina existent: liner, gresite, formigó o fibra. <strong>No requereix obra</strong>, només connexió al sistema de filtració." },
+        { "q": "Quant triga la instal·lació?", "a": "Entre 4 i 6 hores. Arribem al matí, instal·lem, configurem i <strong>t'ho deixem funcionant el mateix dia</strong>." },
+        { "q": "L'aigua salada danya la piscina?", "a": "No. La concentració és molt baixa (4-5 g/litre, <strong>menys que una llàgrima</strong>). No danya materials, equips ni plantes del jardí." },
+        { "q": "Quin manteniment necessita?", "a": "Mínim. Netejar les cèl·lules 1-2 cops l'any (t'ensenyem com) i afegir sal ocasionalment. <strong>La resta és completament automàtic</strong>." }
+      ]
+    },
+    "equipment": {
+      "badge": "Tecnologia WiFi + Bluetooth",
+      "title": "Equips de primera marca",
+      "subtitle": "Instal·lem cloradors amb connectivitat WiFi i Bluetooth. Controla la teva piscina des del mòbil, estiguis on estiguis.",
+      "controlText": "Controla la teva piscina des del mòbil amb l'app",
+      "products": {
+        "bsv": { "name": "Clorador Salí BSV", "desc": "Clorador d'alta eficiència amb control WiFi i Bluetooth. Monitoritza i ajusta els nivells de clor des del teu smartphone en temps real." },
+        "aiguamunt": { "name": "Clorador Salí Aiguamunt", "desc": "Sistema de cloració salina amb connectivitat intel·ligent. Gestió remota completa i alertes automàtiques al teu mòbil." },
+        "pump": { "name": "Bomba Dosificadora", "desc": "Dosificació automàtica i precisa del pH. Manté l'equilibri perfecte de l'aigua sense intervenció manual." }
+      }
+    },
+    "finalCta": {
+      "title1": "Instal·lació en 1 dia.",
+      "title2": "Estalvi de per vida.",
+      "subtitle": "Deixa de gastar 400€ cada any en clor. Deixa de perdre temps afegint productes cada setmana.",
+      "cta": "Sol·licita pressupost"
+    }
   }
 }
