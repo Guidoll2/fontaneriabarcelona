@@ -519,7 +519,7 @@ export default async function CloradorSalinoPage({ params }: Params) {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="relative overflow-hidden rounded-2xl group">
                 <Image
-                  src="/piscinalista.jpeg"
+                  src="/insta-clora-final-1.png"
                   alt={locale === "en" ? "Pool with crystal clear water in Barcelona - salt chlorinator installation completed" : "Piscina con agua cristalina en Barcelona - instalación de clorador salino completada"}
                   width={400}
                   height={300}
@@ -529,7 +529,7 @@ export default async function CloradorSalinoPage({ params }: Params) {
               </div>
               <div className="relative overflow-hidden rounded-2xl group">
                 <Image
-                  src="/piscinapasto.jpeg"
+                  src="/insta-clora-final-2.png"
                   alt={locale === "en" ? "Residential pool with garden in Barcelona metropolitan area" : "Piscina residencial con jardín en área metropolitana de Barcelona"}
                   width={400}
                   height={300}
