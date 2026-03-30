@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
+import { trackFormSubmission } from "@/components/GoogleAnalytics";
 
 type FormData = {
   nombre: string;
@@ -179,17 +180,27 @@ export default function LeadFormClorador({ locale = "es" }: { locale?: string })
         });
       }
 
-      // Google Ads Conversion (requires AW-ID configured in GoogleAnalytics)
+      // Envío exitoso: track de formulario (GA4) y conversión Google Ads para cloradores
+      trackFormSubmission("cloradores");
+
+      // Opcional: push a dataLayer para objetivos internos con valor estimado
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: "lead_form_submission",
+          form_name: "clorador_salino_lead",
+          form_location: "instalacion-clorador-salino",
+          value: 1800,
+          currency: "EUR",
+        });
+      }
+
+      // Evento GA4 adicional si gtag está disponible
       if (typeof window !== "undefined" && (window as any).gtag) {
-        const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-        const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
-        if (adsId && conversionLabel) {
-          (window as any).gtag("event", "conversion", {
-            send_to: `${adsId}/${conversionLabel}`,
-            value: 1800,
-            currency: "EUR",
-          });
-        }
+        (window as any).gtag("event", "generate_lead", {
+          event_category: "Lead",
+          event_label: "Clorador Salino",
+          value: 1800,
+        });
       }
 
       setStatus("success");
